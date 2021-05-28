@@ -1,5 +1,6 @@
 import React from "react";
-// import { Counter } from "./features/counter/Counter";
+import { ThemeProvider } from "styled-components";
+import theme from "./theme/global";
 import "./App.css";
 
 import Header from "./features/header";
@@ -8,11 +9,10 @@ import Nav from "./features/nav";
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Header />
-      {/* <header className="App-header">
-        <Counter />        
-      </header> */}
+      <ThemeProvider theme={theme}>
+        <Nav />
+        {/* <Header /> */}
+      </ThemeProvider>
     </div>
   );
 }
