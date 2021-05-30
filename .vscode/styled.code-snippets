@@ -1,0 +1,14 @@
+// background-color: ${(props) => props.theme.color.primary};;
+
+{
+  "${": {
+    "scope": "css",
+    "prefix": "${()=>props.theme}",
+    "body": "${(props) => props.theme.${1}}"
+  },
+  "rfcs": {
+    "scope": "typescriptreact",
+    "prefix": "rfcs",
+    "body": "import styled from 'styled-components';\n\nconst Body = ({ className }: ${2}) => {\nreturn <div className={className}>${3}</div>;\n};\n\nconst ${1} = styled(Body)``;\n\nexport default ${1};"
+  }
+}

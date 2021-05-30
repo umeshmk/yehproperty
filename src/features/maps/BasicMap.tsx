@@ -11,20 +11,17 @@ function BasicMap() {
   useEffect(() => {
     // let map: google.maps.Map;
 
-    // function initMap(): void {
     if (google !== undefined) {
       new google.maps.Map(mapDiv.current as HTMLElement, {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
       });
     }
-    // }
-    // initMap();
   }, [mapDiv]);
 
   return (
     <>
-      <div className="map" ref={mapDiv}></div>
+      <div id="map" ref={mapDiv}></div>
     </>
   );
 }
