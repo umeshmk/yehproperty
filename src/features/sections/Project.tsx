@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Carousel, Title } from "../../elements";
+import { Carousel, MyDate, Price, Title } from "../../elements";
 import { IStyled } from "../../types";
 
 const Body = ({ className }: IStyled) => {
@@ -9,7 +9,12 @@ const Body = ({ className }: IStyled) => {
         <Carousel />
       </div>
       <div className="content">
-        <Title title="Ashar Aria" owner="By Umesh Kadam" />
+        <div className="content-header">
+          <Title title="Ashar Aria" owner="By Umesh Kadam" />
+          {/* <MyDate timestamp="2016-05-09T14:35:11Z" /> */}
+
+          <Price price="70000000" />
+        </div>
       </div>
     </div>
   );
@@ -29,7 +34,16 @@ const Project = styled(Body)`
   }
 
   .content {
-    padding: 1rem;
+    /* padding: 1rem; */
+    /* border: 1px solid red; */
+    width: 50%;
+    padding-left: 1rem;
+  }
+  .content-header {
+    display: flex;
+    /* border: 1px solid; */
+    justify-content: space-between;
+    align-items: flex-end;
   }
 `;
 export default Project;

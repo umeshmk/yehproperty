@@ -34,7 +34,7 @@ let theme: ThemeInterface = {
     h2: "2.5rem",
     h3: "1.8rem",
     h4: "1.2rem",
-    h5: "0.8rem",
+    h5: "0.9rem",
     // h5: "1rem" ,
   },
   // breakpoint: {

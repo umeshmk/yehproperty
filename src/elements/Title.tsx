@@ -23,10 +23,10 @@ const Title = styled(Body)`
     font-weight: 600;
   }
   .owner {
-    /* color: ${(props) => props.theme.colors.a}; */
+    color: ${(props) => props.theme.colors.a};
     font-family: ${(props) => props.theme.family.b};
     font-size: ${(props) => props.theme.size.h4};
-    font-weight: 300;
+    font-weight: 400;
   }
 `;
 
