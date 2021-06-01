@@ -7,6 +7,7 @@ import BasicMap from "./features/maps/BasicMap";
 import Header from "./features/header";
 import Nav from "./features/nav";
 import Sections from "./features/sections/Sections";
+import Footer from "./features/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <div className="map">
           <BasicMap />
         </div> */}
+        <Footer />
       </ThemeProvider>
     </div>
   );
