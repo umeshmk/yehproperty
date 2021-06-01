@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { ButtonSlide } from ".";
 import { IStyled } from "../types";
 
-const Button = styled.button`
-  position: absolute;
-  cursor: pointer;
-  color: ${(props) => props.theme.colors.a};
-  background-color: ${(props) => props.theme.colors.c};
-  font-size: ${(props) => props.theme.size.h4};
-  z-index: 10;
-  opacity: 0.5;
-
-  &:hover {
-    opacity: 1;
-    /* filter: brightness(110%); */
-  }
-  &:active {
-    opacity: 1;
-    filter: brightness(90%);
-  }
-`;
+interface IProps extends IStyled {
+  imageList: string[];
+}
 
 const Image = styled.img`
   /* position: absolute; */
@@ -27,53 +13,57 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const imageList = [
-  "https://picsum.photos/500/300?random=1",
-  "https://picsum.photos/500/300?random=2",
-  "https://picsum.photos/500/300?random=3",
-  "https://picsum.photos/500/300?random=4",
-];
-
-const Body = ({ className }: IStyled) => {
+const Body = ({ className, imageList }: IProps) => {
   const [current, setCurrent] = useState(0);
   const ref = React.createRef<HTMLDivElement>();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    let div = ref.current;
+
+    setCurrent(0);
+
+    if (div) {
+      div.style.transition = "none";
+      div.style.marginLeft = "0";
+      setTimeout(() => {
+        if (div) div.style.transition = "all 500ms ease-in";
+      }, 100);
+    }
+  }, [imageList]);
 
   const handleSlide = (e: React.SyntheticEvent<HTMLElement>) => {
-    const imageListDiv = ref.current;
+    const div = ref.current;
     const { slide } = e.currentTarget.dataset;
 
-    if (imageListDiv) {
+    if (div) {
       if (slide === "next" && current < imageList.length - 1) {
-        imageListDiv.style.marginLeft = `-${current + 1}00%`;
-        console.log(slide, imageListDiv.style.marginLeft);
+        div.style.marginLeft = `-${current + 1}00%`;
+        // console.log(slide, div.style.marginLeft);
         setCurrent(current + 1);
-        console.log(current, "-->", current + 1);
+        // console.log(current, "-->", current + 1);
       }
       if (slide === "prev" && current > 0) {
-        imageListDiv.style.marginLeft = `-${current - 1}00%`;
-        console.log(slide, imageListDiv.style.marginLeft);
+        div.style.marginLeft = `-${current - 1}00%`;
+        // console.log(slide, div.style.marginLeft);
         setCurrent(current - 1);
-        console.log(current - 1, "<--", current);
+        // console.log(current - 1, "<--", current);
       }
     }
   };
 
   return (
     <div className={className}>
-      {/* <h1>carousel</h1> */}
       <div className="imageList" ref={ref} data-current={current}>
         {imageList.map((i, k) => {
           return <Image src={i} data-id={k} key={k} />;
         })}
       </div>
-      <Button className="left" data-slide="prev" onClick={handleSlide}>
+      <ButtonSlide className="left" data-slide="prev" onClick={handleSlide}>
         <span className="fa fa-chevron-circle-left" aria-hidden="true"></span>
-      </Button>
-      <Button className="right" data-slide="next" onClick={handleSlide}>
+      </ButtonSlide>
+      <ButtonSlide className="right" data-slide="next" onClick={handleSlide}>
         <span className="fa fa-chevron-circle-right" aria-hidden="true"></span>
-      </Button>
+      </ButtonSlide>
     </div>
   );
 };

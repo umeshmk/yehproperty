@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/10/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 2,
+    "price": "17000000",
+    "img": "https://picsum.photos/id/11/300/200",
+    "title": "Nirmiti 7 Hills",
+    "location": "Mulund"
+  },
+  {
+    "id": 3,
+    "price": "7700000",
+    "img": "https://picsum.photos/id/12/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 4,
+    "price": "4200000",
+    "img": "https://picsum.photos/id/13/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 5,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/14/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 6,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/15/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 7,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/16/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 8,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/17/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  },
+  {
+    "id": 9,
+    "price": "7000000",
+    "img": "https://picsum.photos/id/18/300/200",
+    "title": "Ashar Aria",
+    "location": "Ghatkoper"
+  }
+]

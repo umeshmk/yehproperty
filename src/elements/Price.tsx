@@ -1,33 +1,17 @@
 import styled from "styled-components";
 import { IStyled } from "../types";
+import { calculatePrice } from "../utility/calculatePrice";
 
 interface IProps extends IStyled {
   price: string;
 }
 
 const Body = ({ className, price }: IProps) => {
-  let text: string = "";
+  const { p, text } = calculatePrice(price);
 
-  const calculate = (price: string) => {
-    // default is thousands
-    let p = parseInt(price);
-
-    if (p >= 10000000) {
-      text = "Cr";
-      p = p / 1e7;
-    } else if (p < 100000) {
-      text = "K";
-      p = p / 1e3;
-    } else if (p >= 100000) {
-      text = "Lacs";
-      p = p / 1e5;
-    }
-
-    return p;
-  };
   return (
     <div className={className}>
-      {calculate(price)} <span>{text}</span>
+      {p} <span>{text}</span>
     </div>
   );
 };
@@ -46,4 +30,12 @@ const Price = styled(Body)`
   /* border-radius: 1rem; */
 `;
 
-export default Price;
+const PriceSmall = styled(Price)`
+  font-size: ${(props) => props.theme.size.h4};
+  padding: 0.2rem 0.3rem;
+  span {
+    font-size: ${(props) => props.theme.size.h5};
+  }
+`;
+
+export { Price, PriceSmall };

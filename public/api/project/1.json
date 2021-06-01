@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "title": "Ashar Aria",
+  "location": "Ghatkoper",
+  "type": "Apartment",
+  "possession": "2023",
+  "area": "24 acres",
+  "floors": "31",
+  "units": "235",
+  "booked": "145",
+  "config": {
+    "2": "7000000",
+    "3": "11000000",
+    "4": "14000000"
+  },
+  "images": [
+    "https://picsum.photos/id/10/500/300",
+    "https://picsum.photos/500/300?random=2",
+    "https://picsum.photos/500/300?random=3",
+    "https://picsum.photos/500/300?random=4"
+  ]
+}
