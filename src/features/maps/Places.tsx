@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import places from "places.js";
+import places, { ChangeEvent } from "places.js";
 import styled from "styled-components";
 import { IStyled } from "../../types";
 import svg from "./pin.svg";
 
-const Body = ({ className }: IStyled) => {
+interface IProps extends IStyled {
+  handleChange: (e: ChangeEvent) => void;
+}
+
+const Body = ({ className, handleChange }: IProps) => {
   const ref = React.createRef<HTMLInputElement>();
 
   useEffect(() => {
@@ -22,8 +26,10 @@ const Body = ({ className }: IStyled) => {
     });
 
     placesAutocomplete.configure(configure);
-    placesAutocomplete.on("change", (e) => console.log(e.suggestion));
-  }, [ref]);
+    // placesAutocomplete.on("change", (e) => console.log(e.suggestion));
+    // placesAutocomplete.on("change", (e) => console.log(typeof e));
+    placesAutocomplete.on("change", handleChange);
+  }, [ref, handleChange]);
 
   const handleFocus = (e: React.SyntheticEvent<EventTarget>) => {
     (e.target as HTMLInputElement).value = "";

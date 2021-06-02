@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectListType, ProjectType } from "../../types";
+import { ProjectListType, ProjectType, PropertyOptionsType } from "../../types";
 
 interface ListState {
   projects: ProjectListType[] | null;
@@ -9,15 +9,9 @@ interface ListState {
   };
   //   status: "idle" | "loading" | "failed";
 }
-// interface ListState {
-//   projects: ProjectListType[] | null;
-//   activeProject: ProjectType | null;
-//   //   status: "idle" | "loading" | "failed";
-// }
-type ListOptionsType = "project" | "buy" | "rent";
 
 type PropertyType = {
-  type: ListOptionsType;
+  type: PropertyOptionsType;
   id: number;
 };
 
@@ -45,7 +39,7 @@ export const getPropertyAsync = createAsyncThunk(
 
 export const getListAsync = createAsyncThunk(
   "list/fetchList",
-  async (type: ListOptionsType) => {
+  async (type: PropertyOptionsType) => {
     const url = "/api/" + type + "-list.json";
     console.log("Async - ", url);
     const response = await fetch(url);

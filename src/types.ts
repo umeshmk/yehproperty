@@ -2,6 +2,8 @@ export interface IStyled {
   className?: string;
 }
 
+export type PropertyOptionsType = "project" | "buy" | "rent";
+
 export type ProjectListType = {
   id: number;
   price: string;

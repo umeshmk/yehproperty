@@ -1,20 +1,16 @@
 // import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-// import logo from "./img/pin.svg";
-// import shortlist from "./img/list-heart.svg";
 import { IStyled } from "../../types";
 
 // Link
-const Link = styled.li`
+const Li = styled.li`
   color: ${(props) => props.theme.colors.b};
   font-size: ${(props) => props.theme.size.h4};
   font-weight: 300;
 `;
 
-// logo
-const Logo = styled.a.attrs((props) => {
-  return { href: props.href };
-})`
+const Logo = styled(Link)`
   color: ${(props) => props.theme.colors.a};
   font-size: ${(props) => props.theme.size.h3};
   font-family: ${(props) => props.theme.family.a};
@@ -34,20 +30,20 @@ let body = ({ className }: IStyled) => {
         {/* <img src={logo} alt="" />
         <i className="far fa-heart fa-2x" aria-hidden="true"></i> */}
         <i className="fas fa-map-marker-alt fa-3x"> </i>
-        <Logo href="/">
+        <Logo to="/">
           <span>Yeh</span>property
           <span>{/* <small>.com</small> */}</span>
         </Logo>
       </div>
       <ul className="links">
-        <Link>
+        <Li>
           {/* <img src={shortlist} alt="shorlist" title="shortlist" /> */}
           <i className="far fa-heart fa-lg" aria-hidden="true"></i>
-        </Link>
-        <Link>Project</Link>
-        <Link>Buy</Link>
-        <Link>Rent</Link>
-        <Link>Login</Link>
+        </Li>
+        <Li>Project</Li>
+        <Li>Buy</Li>
+        <Li>Rent</Li>
+        <Li>Login</Li>
       </ul>
     </nav>
   );

@@ -6,15 +6,12 @@ import useClickOutside from "../utility/useClickOutside";
 interface IProps extends IStyled {
   name?: string;
   id?: string;
-  options: {
-    [key: string]: string;
-  };
+  options: string[];
+  handleChange: (option: string) => void;
 }
 
 interface IPropsList extends IStyled {
-  options: {
-    [key: string]: string;
-  };
+  options: string[];
   isVisible: boolean;
   handleClick: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -29,9 +26,9 @@ const ListBody = ({
 
   return (
     <ul className={className}>
-      {Object.keys(options).map((key) => {
+      {options.map((key: string) => {
         return (
-          <li key={key} onClick={handleClick} data-value={options[key]}>
+          <li key={key} onClick={handleClick} data-value={key}>
             {key}
           </li>
         );
@@ -65,8 +62,8 @@ const List = styled(ListBody)`
   }
 `;
 
-const Body = ({ className, options }: IProps) => {
-  const [selected, setSelected] = useState(Object.keys(options)[0]);
+const Body = ({ className, options, handleChange }: IProps) => {
+  const [selected, setSelected] = useState(options[0]);
   const { ref, isVisible, setIsVisible } = useClickOutside(false);
 
   const handleVisible = () => {
@@ -78,6 +75,7 @@ const Body = ({ className, options }: IProps) => {
     if (value) {
       setSelected(value);
       setIsVisible(false);
+      handleChange(value);
     }
   };
 
@@ -103,6 +101,7 @@ const Dropdown = styled(Body)`
   display: inline-block;
   cursor: pointer;
   position: relative;
+  text-transform: capitalize;
 
   & .title {
     padding: 1rem;

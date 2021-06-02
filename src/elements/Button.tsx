@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = styled.a`
+const Button = styled(Link)`
   background-color: ${(props) => props.theme.colors.a};
   color: ${(props) => props.theme.colors.c};
   border: none;

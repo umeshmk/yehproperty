@@ -1,24 +1,26 @@
-import React from "react";
+// import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./App.css";
-
-// import BasicMap from "./features/maps/BasicMap";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Nav from "./features/nav";
 import Footer from "./features/footer";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Project from "./pages/Project";
+import Search from "./pages/Search";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Router>
+      <Router basename="yehproperty">
+        <Nav />
+
         <Switch>
           <Route path="/project/:id/*">
             <Project />
+          </Route>
+          <Route path="/search">
+            <Search />
           </Route>
           <Route exact path="/">
             <Welcome />
@@ -27,11 +29,9 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+
+        <Footer />
       </Router>
-      {/* <div className="map">
-          <BasicMap />
-        </div> */}
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Button, Carousel, Location, Price, Title } from "../../elements";
@@ -68,9 +67,10 @@ const Body = ({ className, pid }: IProps) => {
           <Price price={Object.values(project.config)[0]} />
         </div>
         <ul className="config">{configJsx}</ul>
+
         <Button
           className="details"
-          href={`/project/${project.id}/${slugify(project.title)}`}
+          to={`/project/${project.id}/${slugify(project.title)}`}
         >
           Details
         </Button>

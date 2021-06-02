@@ -1,30 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { IStyled } from "../../types";
+import { IStyled, PropertyOptionsType } from "../../types";
 import { Dropdown, Button } from "../../elements";
 import Places from "../maps/Places";
+import { ChangeEvent } from "places.js";
 
 const StyledDropdown = styled(Dropdown)`
   width: 8rem;
   border: none;
 `;
 
+const options: PropertyOptionsType[] = ["project", "buy", "rent"];
+
 const Body = ({ className }: IStyled) => {
-  const options = { Project: "Project", Buy: "Buy", Rent: "Rent" };
+  // const [searchUrl, setSearchUrl] = useState();
+  const [coords, setCoords] = useState({ lat: 18.9388, lng: 72.8353 }); // Mumbai coords
+  const [selected, setSelected] = useState<PropertyOptionsType>(options[0]);
+
+  const param = `type=${selected}&lat=${coords.lat}&lng=${coords.lng}`;
 
   // useEffect(() => {}, []);
 
-  const handleClick = (e: React.SyntheticEvent<EventTarget>) => {
-    console.log("clicked search", e);
+  const handleChange = (e: ChangeEvent) => {
+    // console.log(e.suggestion);
+    setCoords(e.suggestion.latlng);
+  };
+
+  const handleDropdownChange = (v: string) => {
+    // if (options.includes(v)) {
+    setSelected(v as PropertyOptionsType);
+    // }
+    console.log(v);
   };
 
   return (
     <div className={className}>
       <div className="places-wrap">
-        <Places />
+        <Places handleChange={handleChange} />
       </div>
-      <StyledDropdown options={options} />
-      <Button onClick={handleClick}>Search</Button>
+      <StyledDropdown options={options} handleChange={handleDropdownChange} />
+      <Button to={"/search?" + param}>Search</Button>
     </div>
   );
 };
