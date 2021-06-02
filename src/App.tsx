@@ -6,11 +6,10 @@ import "./App.css";
 // import BasicMap from "./features/maps/BasicMap";
 
 import Nav from "./features/nav";
-// import Header from "./features/header";
-// import Sections from "./features/sections/Sections";
 import Footer from "./features/footer";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
+import Project from "./pages/Project";
 
 function App() {
   return (
@@ -18,7 +17,9 @@ function App() {
       <Nav />
       <Router>
         <Switch>
-          <Route path="/project/:id"></Route>
+          <Route path="/project/:id/*">
+            <Project />
+          </Route>
           <Route exact path="/">
             <Welcome />
           </Route>

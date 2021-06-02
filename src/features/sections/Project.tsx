@@ -1,9 +1,11 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Button, Carousel, Location, Price, Title } from "../../elements";
 import { IStyled, ProjectType } from "../../types";
 import { calculatePrice } from "../../utility/calculatePrice";
+import { slugify } from "../../utility/slugify";
 import { getPropertyAsync, selectActiveProject } from "../reducers/listSlice";
 
 interface IProps extends IStyled {
@@ -66,7 +68,13 @@ const Body = ({ className, pid }: IProps) => {
           <Price price={Object.values(project.config)[0]} />
         </div>
         <ul className="config">{configJsx}</ul>
-        <Button className="details">Details</Button>
+        <Button
+          className="details"
+          href={`/project/${project.id}/${slugify(project.title)}`}
+        >
+          Details
+        </Button>
+
         <ul className="features">{featuresJsx}</ul>
       </div>
     </div>
