@@ -1,22 +1,82 @@
 {
   "id": 1,
   "title": "Ashar Aria",
-  "location": "Ghatkoper",
+  "location": "Thane",
   "type": "Apartment",
   "possession": "2023",
   "area": "24 acres",
-  "floors": "31",
+  "floors": "39",
   "units": "235",
   "booked": "145",
   "config": {
-    "2": "7000000",
-    "3": "11000000",
-    "4": "14000000"
+    "1": "7000000",
+    "2": "11000000",
+    "3": "14000000"
   },
   "images": [
+    "http://lorempixel.com/1100/700/city/1",
+    "http://lorempixel.com/500/300/city/2",
+    "http://lorempixel.com/500/300/city/3",
     "https://picsum.photos/id/10/500/300",
     "https://picsum.photos/500/300?random=2",
     "https://picsum.photos/500/300?random=3",
     "https://picsum.photos/500/300?random=4"
-  ]
+  ],
+  "address": {
+    "line": "Next to Sapphire Hospital, Kharegaon Road",
+    "locality": "Kalwa",
+    "city": "Thane",
+    "state": "Maharashtra",
+    "pincode": "400605"
+  },
+  "rera": {
+    "approved": true,
+    "id": "P51700017518"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "configDetails": {
+    "1": {
+      "carpet": "340",
+      "baths": "1",
+      "bookingPrice": "300000",
+      "img": "https://picsum.photos/400/300?random=1"
+    },
+    "2": {
+      "carpet": "730",
+      "baths": "2",
+      "bookingPrice": "600000",
+      "img": "https://picsum.photos/400/300?random=2"
+    },
+    "3": {
+      "carpet": "945",
+      "baths": "2",
+      "bookingPrice": "1000000",
+      "img": "https://picsum.photos/400/300?random=3"
+    }
+  },
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "developer": {
+    "id": 1,
+    "name": "Ashar Developers",
+    "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+    "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604"
+  }
 }

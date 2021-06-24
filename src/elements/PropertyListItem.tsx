@@ -11,15 +11,9 @@ interface IProps extends IStyled {
   location: string;
 }
 
-// const Image = styled.img`
-//   width: 100%;
-//   height: 100%;
-// `;
-
 const Body = ({ className, img, id, price, location, title }: IProps) => {
   return (
     <div className={className}>
-      {/* <Image src={img} /> */}
       <PriceSmall className="price" price={price} />
       <div className="location">
         <LocationSmall>{location}</LocationSmall>
@@ -36,6 +30,8 @@ const PropertyListItem = styled(Body)`
   /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
+  transition: all 300ms;
+  cursor: pointer;
 
   .location,
   .price,
@@ -59,7 +55,8 @@ const PropertyListItem = styled(Body)`
   }
 
   :hover {
-    box-shadow: none;
+    box-shadow: inset 0 -0rem 0rem ${(props) => props.theme.colors.a + "53"};
+    /* box-shadow: none; */
   }
 `;
 

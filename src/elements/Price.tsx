@@ -11,7 +11,8 @@ const Body = ({ className, price }: IProps) => {
 
   return (
     <div className={className}>
-      {p} <span>{text}</span>
+      <i className="fas fa-rupee-sign"></i>
+      {p} <span>{text} +</span>
     </div>
   );
 };
@@ -28,6 +29,12 @@ const Price = styled(Body)`
     font-size: ${(props) => props.theme.size.h3};
   }
   /* border-radius: 1rem; */
+
+  .fa-rupee-sign {
+    color: ${(props) => props.theme.colors.c + "50"};
+    font-size: ${(props) => props.theme.size.h3};
+    padding-right: 0.4rem;
+  }
 `;
 
 const PriceSmall = styled(Price)`
@@ -35,6 +42,9 @@ const PriceSmall = styled(Price)`
   padding: 0.2rem 0.3rem;
   span {
     font-size: ${(props) => props.theme.size.h5};
+  }
+  .fa-rupee-sign {
+    display: none;
   }
 `;
 

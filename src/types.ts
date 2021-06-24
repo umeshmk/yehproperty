@@ -26,6 +26,56 @@ export type ProjectType = {
     [rooms: string]: string; // "14000000"
   };
   images: string[];
+
+  address: AddressType;
+  rera: ReraType;
+  about: string;
+  highlights: string[];
+  // configDetails: {
+  //   [n: string]: {
+  //     carpet: string;
+  //     baths: string;
+  //     bookingPrice: string;
+  //     img: string;
+  //   };
+  // };
+  configDetails: {
+    [n: string]: ConfigDetailsType;
+  };
+  addOns: {
+    [key in AddOnsType]: boolean;
+  };
+  developer: { id: number; name: string; about: string; office: string };
 };
 
-// type: ListOptionsType, id:number
+export type AddressType = {
+  line: string;
+  locality: string;
+  city: string;
+  state: string;
+  pincode: string;
+};
+
+export type ReraType = {
+  approved: boolean;
+  id: string | null;
+};
+
+export type ConfigDetailsType = {
+  carpet: string;
+  baths: string;
+  bookingPrice: string;
+  img: string;
+};
+
+export type AddOnsType =
+  | "open park"
+  | "security"
+  | "cctv"
+  | "fire safety"
+  | "swimming pool"
+  | "club house"
+  | "gymnasium"
+  | "elevator"
+  | "power backup"
+  | "parking";

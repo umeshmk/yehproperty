@@ -24,10 +24,22 @@ const Title = styled(Body)`
   }
   .owner {
     color: ${(props) => props.theme.colors.a};
-    font-family: ${(props) => props.theme.family.b};
+    font-family: ${(props) => props.theme.family.a};
     font-size: ${(props) => props.theme.size.h4};
     font-weight: 400;
   }
 `;
 
-export default Title;
+const TitleBig = styled(Body)`
+  text-align: center;
+  .title {
+    font-size: ${(props) => props.theme.size.h1};
+  }
+  .owner {
+    color: ${(props) => props.theme.colors.a};
+    /* font-weight: 600; */
+    font-size: ${(props) => props.theme.size.h3};
+  }
+`;
+
+export { Title, TitleBig };
