@@ -31,21 +31,13 @@ export type ProjectType = {
   rera: ReraType;
   about: string;
   highlights: string[];
-  // configDetails: {
-  //   [n: string]: {
-  //     carpet: string;
-  //     baths: string;
-  //     bookingPrice: string;
-  //     img: string;
-  //   };
-  // };
   configDetails: {
     [n: string]: ConfigDetailsType;
   };
   addOns: {
     [key in AddOnsType]: boolean;
   };
-  developer: { id: number; name: string; about: string; office: string };
+  developer: DeveloperType;
 };
 
 export type AddressType = {
@@ -79,3 +71,12 @@ export type AddOnsType =
   | "elevator"
   | "power backup"
   | "parking";
+
+export type DeveloperType = {
+  id: number;
+  name: string;
+  about: string;
+  office: string;
+  logo: string;
+  contact: string;
+};

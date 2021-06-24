@@ -76,7 +76,9 @@
   "developer": {
     "id": 1,
     "name": "Ashar Developers",
-    "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
-    "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604"
+    "about": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ea    quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis. Lorem, ipsum dolor sit amet    consectetur adipisicing elit. Velit ea quidem dolorem, inventore    mollitia provident reprehenderit soluta necessitatibus vero? Eaque    placeat, ipsa numquam doloremque natus a reprehenderit officia saepe    officiis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit    ea quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis.",
+    "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+    "logo": "https://i.imgur.com/VKQirNx.jpeg",
+    "contact": "9821247610"
   }
 }

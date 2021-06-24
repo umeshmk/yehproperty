@@ -20,6 +20,7 @@ import { usePageTitle } from "../../utility/usePageTitle";
 import { getPropertyAsync, selectActiveProject } from "../reducers/listSlice";
 import AddOns from "./AddOns";
 import ConfigDetails from "./ConfigDetails";
+import Developer from "./Developer";
 import Gallery from "./Gallery";
 
 interface IProps extends IStyled {
@@ -100,7 +101,7 @@ const Body = ({ className, id }: IProps) => {
 
       <Gallery images={images} />
       <AddOns list={addOns} />
-
+      <Developer developer={developer} />
       {/* <h3>{developer}</h3> */}
     </div>
   );
