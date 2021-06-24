@@ -24,15 +24,15 @@ const Body = ({ className, images }: IProps) => {
   return (
     <div className={className}>
       <div className="thumbnails">
-        {images.map((i, k) => {
+        {images.map((url, k) => {
+          url = url.replace("/upload/", "/upload/w_300,h_200,c_fill/"); // cloudinary urls
+
           return (
             <div
               onClick={() => handleClick(true, k)}
               key={k}
-              style={{ backgroundImage: `url(${i})` }}
-            >
-              {/* <img src={i} alt="" /> */}
-            </div>
+              style={{ backgroundImage: `url(${url})` }}
+            ></div>
           );
         })}
       </div>
