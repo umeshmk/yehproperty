@@ -7,12 +7,6 @@ interface IProps extends IStyled {
   imageList: string[];
 }
 
-const Image = styled.img`
-  /* position: absolute; */
-  width: 100%;
-  height: 100%;
-`;
-
 const Body = ({ className, imageList }: IProps) => {
   const [current, setCurrent] = useState(0);
   const ref = React.createRef<HTMLDivElement>();
@@ -52,8 +46,9 @@ const Body = ({ className, imageList }: IProps) => {
   return (
     <div className={className}>
       <div className="imageList" ref={ref} data-current={current}>
-        {imageList.map((i, k) => {
-          return <Image src={i} key={k} />;
+        {imageList.map((url, k) => {
+          url = url.replace("/upload/", "/upload/w_600,h_400,c_fill/"); // cloudinary urls
+          return <div key={k} style={{ backgroundImage: `url(${url})` }}></div>;
         })}
       </div>
 
@@ -88,12 +83,17 @@ const Carousel = styled(Body)`
   }
 
   & .imageList {
-    /* position: absolute; */
-    display: flex;
     height: 100%;
     width: 100%;
+    white-space: nowrap;
     transition: all 500ms ease-in;
-    /* justify-content: center; */
+  }
+  & .imageList > div {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
 
