@@ -12,7 +12,7 @@ const Body = ({ className, imageList, activeImg }: IProps) => {
   const [current, setCurrent] = useState(activeImg);
   const ref = React.createRef<HTMLDivElement>();
 
-  console.log(current);
+  // console.log(current);
 
   useEffect(() => {
     let div = ref.current;
@@ -24,7 +24,7 @@ const Body = ({ className, imageList, activeImg }: IProps) => {
       setTimeout(() => {
         if (div) {
           div.style.transition = "all 500ms ease-in";
-          console.log("timeout");
+          // console.log("timeout");
         }
       }, 100);
     }

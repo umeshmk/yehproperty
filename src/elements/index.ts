@@ -13,6 +13,7 @@ import PropertyListItem from "./PropertyListItem";
 import FeatureList from "./FeatureList";
 import ConfigPrice from "./ConfigPrice";
 import Rera from "./Rera";
+import ImageModal from "./ImageModal";
 
 export {
   Dropdown,
@@ -34,4 +35,5 @@ export {
   FeatureList,
   ConfigPrice,
   Rera,
+  ImageModal,
 };
