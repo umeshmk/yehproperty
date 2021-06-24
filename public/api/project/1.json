@@ -14,13 +14,15 @@
     "3": "14000000"
   },
   "images": [
-    "http://lorempixel.com/1100/700/city/1",
-    "http://lorempixel.com/500/300/city/2",
-    "http://lorempixel.com/500/300/city/3",
-    "https://picsum.photos/id/10/500/300",
-    "https://picsum.photos/500/300?random=2",
-    "https://picsum.photos/500/300?random=3",
-    "https://picsum.photos/500/300?random=4"
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/1.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/2.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/3.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/4.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/5.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/6.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/7.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/8.jpg",
+    "https://res.cloudinary.com/dy4mautzh/image/upload/v1624519311/yehproperty/projects/9.jpg"
   ],
   "address": {
     "line": "Next to Sapphire Hospital, Kharegaon Road",
@@ -46,19 +48,19 @@
       "carpet": "340",
       "baths": "1",
       "bookingPrice": "300000",
-      "img": "https://picsum.photos/400/300?random=1"
+      "img": "https://res.cloudinary.com/dy4mautzh/image/upload/v1624518601/yehproperty/projects/1bhk.jpg"
     },
     "2": {
       "carpet": "730",
       "baths": "2",
       "bookingPrice": "600000",
-      "img": "https://picsum.photos/400/300?random=2"
+      "img": "https://res.cloudinary.com/dy4mautzh/image/upload/v1624518601/yehproperty/projects/2bhk.jpg"
     },
     "3": {
       "carpet": "945",
       "baths": "2",
       "bookingPrice": "1000000",
-      "img": "https://picsum.photos/400/300?random=3"
+      "img": "https://res.cloudinary.com/dy4mautzh/image/upload/v1624518601/yehproperty/projects/3bhk.jpg"
     }
   },
   "addOns": {
