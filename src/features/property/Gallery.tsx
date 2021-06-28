@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Carousel, CarouselBig } from "../../elements";
+import { CarouselBig } from "../../elements";
 import { IStyled } from "../../types";
-import useClickOutside from "../../utility/useClickOutside";
 
 interface IProps extends IStyled {
   images: string[];
@@ -25,7 +24,7 @@ const Body = ({ className, images }: IProps) => {
     <div className={className}>
       <div className="thumbnails">
         {images.map((url, k) => {
-          url = url.replace("/upload/", "/upload/w_300,h_200,c_fill/"); // cloudinary urls
+          url = process.env.REACT_APP_IMAGE_SM_URL + url;
 
           return (
             <div
@@ -57,8 +56,8 @@ const Gallery = styled(Body)`
     flex-wrap: wrap;
   }
   .thumbnails div {
-    width: 10rem;
-    height: 7rem;
+    width: 13rem;
+    height: 9rem;
     margin: 0.5rem;
     background-size: cover;
     background-repeat: no-repeat;

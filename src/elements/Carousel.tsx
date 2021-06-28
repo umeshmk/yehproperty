@@ -47,7 +47,7 @@ const Body = ({ className, imageList }: IProps) => {
     <div className={className}>
       <div className="imageList" ref={ref} data-current={current}>
         {imageList.map((url, k) => {
-          url = url.replace("/upload/", "/upload/w_600,h_400,c_fill/"); // cloudinary urls
+          url = process.env.REACT_APP_IMAGE_MD_URL + url;
           return <div key={k} style={{ backgroundImage: `url(${url})` }}></div>;
         })}
       </div>

@@ -12,8 +12,10 @@ interface IProps extends IStyled {
 }
 
 const Body = ({ className, img, id, price, location, title }: IProps) => {
+  const url = process.env.REACT_APP_IMAGE_SM_URL + img;
+
   return (
-    <div className={className}>
+    <div className={className} style={{ backgroundImage: `url(${url})` }}>
       <PriceSmall className="price" price={price} />
       <div className="location">
         <LocationSmall>{location}</LocationSmall>
@@ -26,7 +28,7 @@ const Body = ({ className, img, id, price, location, title }: IProps) => {
 const PropertyListItem = styled(Body)`
   position: relative;
   box-shadow: inset 0 -100rem 100rem ${(props) => props.theme.colors.a + "53"};
-  background-image: url(${(props) => props.img});
+  /* background-image: url(${(props) => props.img}); */
   /* border: 1px solid blue; */
   width: 100%;
   height: 100%;

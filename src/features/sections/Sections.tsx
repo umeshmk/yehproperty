@@ -36,12 +36,12 @@ const Body = ({ className }: IStyled) => {
     }
   }, [projects, dispatch]);
 
-  console.log("section render");
+  // console.log("section render");
 
   // change active on click
   const handleClick = (pid: number) => {
     setActiveProject(pid);
-    console.log(pid);
+    // console.log(pid);
   };
 
   return (

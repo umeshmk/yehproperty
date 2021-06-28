@@ -51,10 +51,11 @@ const Body = ({ className, imageList, activeImg }: IProps) => {
   return (
     <div className={className}>
       <div className="imageList" ref={ref} data-current={current}>
-        {imageList.map((i, k) => {
+        {imageList.map((url, k) => {
+          url = process.env.REACT_APP_IMAGE_LG_URL + url;
           return (
             <div
-              style={{ backgroundImage: `url(${i})` }}
+              style={{ backgroundImage: `url(${url})` }}
               data-id={k}
               key={k}
             ></div>
