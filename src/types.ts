@@ -38,6 +38,7 @@ export type ProjectType = {
     [key in AddOnsType]: boolean;
   };
   developer: DeveloperType;
+  coords: CoordsType;
 };
 
 export type AddressType = {
@@ -79,4 +80,9 @@ export type DeveloperType = {
   office: string;
   logo: string;
   contact: string;
+};
+
+export type CoordsType = {
+  lat: number;
+  lng: number;
 };

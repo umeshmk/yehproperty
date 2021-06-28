@@ -16,6 +16,7 @@ import {
 import { IStyled } from "../../types";
 import { _pick } from "../../utility/lodash";
 import { usePageTitle } from "../../utility/usePageTitle";
+import MapMarker from "../maps/MapMarker";
 
 import { getPropertyAsync, selectActiveProject } from "../reducers/listSlice";
 import AddOns from "./AddOns";
@@ -60,6 +61,7 @@ const Body = ({ className, id }: IProps) => {
     configDetails,
     addOns,
     developer,
+    coords,
   } = project;
 
   const features = _pick(project, [
@@ -102,7 +104,9 @@ const Body = ({ className, id }: IProps) => {
       <Gallery images={images} />
       <AddOns list={addOns} />
       <Developer developer={developer} />
-      {/* <h3>{developer}</h3> */}
+      <div className="map">
+        <MapMarker coords={coords} title={title} />
+      </div>
     </div>
   );
 };
@@ -172,6 +176,11 @@ const Project = styled(Body)`
   .carousel {
     height: 40vh;
     /* width: 60vw; */
+  }
+
+  .map {
+    width: 60%;
+    height: 20rem;
   }
 `;
 

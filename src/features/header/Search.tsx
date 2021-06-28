@@ -14,7 +14,7 @@ const options: PropertyOptionsType[] = ["project", "buy", "rent"];
 
 const Body = ({ className }: IStyled) => {
   // const [searchUrl, setSearchUrl] = useState();
-  const [coords, setCoords] = useState({ lat: 18.9388, lng: 72.8353 }); // Mumbai coords
+  const [coords, setCoords] = useState({ lat: 19.1388, lng: 72.8353 }); // Mumbai coords
   const [selected, setSelected] = useState<PropertyOptionsType>(options[0]);
 
   const param = `type=${selected}&lat=${coords.lat}&lng=${coords.lng}`;

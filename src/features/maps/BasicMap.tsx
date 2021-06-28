@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IStyled } from "../../types";
 import { useQuery } from "../../utility/useQuery";
-import "./index.css";
 import { mapStyle } from "./style";
 
 // interface IProps {
@@ -36,8 +35,6 @@ const Body = ({ className }: IStyled) => {
 
   return (
     <div className={className}>
-      {/* <h1>{query.get("lat")}</h1>
-      <h1>{query.get("lng")}</h1> */}
       <div id="map" ref={mapDiv}></div>
     </div>
   );
@@ -46,6 +43,12 @@ const Body = ({ className }: IStyled) => {
 const BasicMap = styled(Body)`
   height: 100%;
   width: 100%;
+
+  #map {
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+  }
 `;
 
 export default BasicMap;

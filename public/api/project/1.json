@@ -82,5 +82,9 @@
     "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
     "logo": "https://i.imgur.com/VKQirNx.jpeg",
     "contact": "9821247610"
+  },
+  "coords": {
+    "lat": 19.1388,
+    "lng": 72.8353
   }
 }
