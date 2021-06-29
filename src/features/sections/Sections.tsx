@@ -18,7 +18,7 @@ const Heading = styled.div`
 `;
 
 const Body = ({ className }: IStyled) => {
-  const projects = useAppSelector(selectListProjects);
+  const projectList = useAppSelector(selectListProjects);
   const dispatch = useAppDispatch();
 
   const [activeProject, setActiveProject] = useState<null | number>(null);
@@ -30,11 +30,11 @@ const Body = ({ className }: IStyled) => {
 
   // set 1st project from projectlist as active
   useEffect(() => {
-    if (projects) {
-      setActiveProject(projects[0].id);
+    if (projectList) {
+      setActiveProject(projectList[0].id);
       // dispatch(getPropertyAsync({ type: "project", id: 1 }));
     }
-  }, [projects, dispatch]);
+  }, [projectList, dispatch]);
 
   // console.log("section render");
 
@@ -52,7 +52,7 @@ const Body = ({ className }: IStyled) => {
           <Project pid={activeProject} />
         </div>
         <div className="property-list">
-          <PropertyList data={projects} handleClick={handleClick} />
+          <PropertyList data={projectList} handleClick={handleClick} />
         </div>
       </div>
       <div className="container">

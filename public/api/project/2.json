@@ -1,21 +1,89 @@
 {
   "id": 2,
-  "title": "Nirmiti 7 Hills",
-  "location": "Mulund",
+  "title": "Runwal Bliss",
+  "location": "Kanjurmarg",
   "type": "Apartment",
-  "possession": "Ready",
-  "area": "0.5 acres",
-  "floors": "41",
-  "units": "125",
-  "booked": "50",
+  "possession": "2022",
+  "area": "120 acres",
+  "floors": "27",
+  "units": "250",
+  "booked": "215",
   "config": {
     "2": "17000000",
-    "3": "23000000"
+    "3": "21000000"
   },
   "images": [
-    "https://picsum.photos/id/11/500/300",
-    "https://picsum.photos/500/300?random=1",
-    "https://picsum.photos/500/300?random=3",
-    "https://picsum.photos/500/300?random=4"
-  ]
+    "projects/2/1.jpg",
+    "projects/2/2.jpg",
+    "projects/2/3.jpg",
+    "projects/2/4.jpg",
+    "projects/2/5.jpg",
+    "projects/2/6.jpg",
+    "projects/2/7.jpg",
+    "projects/2/8.jpg",
+    "projects/2/9.jpg",
+    "projects/2/10.jpg",
+    "projects/2/11.jpg",
+    "projects/2/12.jpg",
+    "projects/2/13.jpg",
+    "projects/2/14.jpg",
+    "projects/2/15.jpg"
+  ],
+  "address": {
+    "line": "Crompton Greaves Compound",
+    "locality": " Kanjurmarg",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400605"
+  },
+  "rera": {
+    "approved": true,
+    "id": "P51700017518"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "configDetails": {
+    "2": {
+      "carpet": "540",
+      "baths": "2",
+      "bookingPrice": "800000",
+      "img": "projects/2/2bhk.jpg"
+    },
+    "3": {
+      "carpet": "930",
+      "baths": "3",
+      "bookingPrice": "1600000",
+      "img": "projects/2/3bhk.jpg"
+    }
+  },
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "developer": {
+    "id": 1,
+    "name": "Runwal Developers",
+    "about": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ea    quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis. Lorem, ipsum dolor sit amet    consectetur adipisicing elit. Velit ea quidem dolorem, inventore    mollitia provident reprehenderit soluta necessitatibus vero? Eaque    placeat, ipsa numquam doloremque natus a reprehenderit officia saepe    officiis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit    ea quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis.",
+    "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+    "logo": "projects/2/logo.jpg",
+    "contact": "9821247610"
+  },
+  "coords": {
+    "lat": 19.1388,
+    "lng": 72.8353
+  }
 }

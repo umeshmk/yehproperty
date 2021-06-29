@@ -39,12 +39,12 @@ const Body = ({ className, config, details, price }: IProps) => {
         Carpet area : <span>{carpet} sqft</span>
       </div>
       <div className="image" onClick={handleModal}>
-        <img src={img} alt="" />
+        <img src={process.env.REACT_APP_IMAGE_SM_URL + img} alt="" />
       </div>
 
       {isVisible && (
         <div ref={ref}>
-          <ImageModal img={img} />
+          <ImageModal img={process.env.REACT_APP_IMAGE_LG_URL + img} />
         </div>
       )}
     </div>

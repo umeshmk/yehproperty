@@ -2,23 +2,23 @@
   {
     "id": 1,
     "price": "7000000",
-    "img": "projects/1.jpg",
+    "img": "projects/1/1.jpg",
     "title": "Ashar Aria",
-    "location": "Ghatkoper"
+    "location": "Thane"
   },
   {
     "id": 2,
     "price": "17000000",
-    "img": "https://picsum.photos/id/11/300/200",
-    "title": "Nirmiti 7 Hills",
-    "location": "Mulund"
+    "img": "projects/2/1.jpg",
+    "title": "Runwal Bliss",
+    "location": "Kanjurmarg"
   },
   {
     "id": 3,
-    "price": "7700000",
-    "img": "https://picsum.photos/id/12/300/200",
-    "title": "Ashar Aria",
-    "location": "Ghatkoper"
+    "price": "24000000",
+    "img": "projects/3/1.jpg",
+    "title": "Lodha World Towers",
+    "location": "Lower Parel"
   },
   {
     "id": 4,

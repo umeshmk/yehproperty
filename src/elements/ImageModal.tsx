@@ -7,8 +7,8 @@ interface IProps extends IStyled {
 
 const Body = ({ className, img }: IProps) => {
   return (
-    <div className={className}>
-      <img src={img} alt="" />
+    <div className={className} style={{ backgroundImage: `url(${img})` }}>
+      {/* <img src={img} alt="" /> */}
     </div>
   );
 };
@@ -18,8 +18,19 @@ const ImageModal = styled(Body)`
   top: 10vh;
   left: 20vw;
   width: 60vw;
+  min-height: 60vh;
+  max-height: 80vh;
   background-color: ${(props) => props.theme.colors.a};
+  background-color: ${(props) => props.theme.colors.a + "95"};
+  border: 10px solid ${(props) => props.theme.colors.a};
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-size: contain; */
   padding: 1rem;
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
 `;
 
 export default ImageModal;
