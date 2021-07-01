@@ -1,0 +1,83 @@
+{
+  "id": 7,
+  "title": "Kalpataru Paramount",
+  "location": "Thane West",
+  "type": "Apartment",
+  "possession": "2022",
+  "area": "33 acres",
+  "floors": "36",
+  "units": "410",
+  "booked": "270",
+  "config": {
+    "1": "8900000",
+    "2": "14000000"
+  },
+  "images": [
+    "projects/7/1.jpg",
+    "projects/7/2.jpg",
+    "projects/7/3.jpg",
+    "projects/7/4.jpg",
+    "projects/7/5.jpg",
+    "projects/7/6.jpg",
+    "projects/7/7.jpg",
+    "projects/7/8.jpg",
+    "projects/7/9.jpg"
+  ],
+  "address": {
+    "line": "Plot No. FP No 1043/Plot B At G South, Ward G South",
+    "locality": "Thane West",
+    "city": "Thane",
+    "state": "Maharashtra",
+    "pincode": "400605"
+  },
+  "rera": {
+    "approved": true,
+    "id": "P51700017518"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "configDetails": {
+    "1": {
+      "carpet": "540",
+      "baths": "2",
+      "bookingPrice": "800000",
+      "img": "projects/7/1bhk.jpg"
+    },
+    "2": {
+      "carpet": "930",
+      "baths": "3",
+      "bookingPrice": "1600000",
+      "img": "projects/7/2bhk.jpg"
+    }
+  },
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "developer": {
+    "id": 1,
+    "name": "Kalpataru Developers",
+    "about": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ea    quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis. Lorem, ipsum dolor sit amet    consectetur adipisicing elit. Velit ea quidem dolorem, inventore    mollitia provident reprehenderit soluta necessitatibus vero? Eaque    placeat, ipsa numquam doloremque natus a reprehenderit officia saepe    officiis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit    ea quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis.",
+    "office": "11th Floor, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+    "logo": "projects/7/logo.jpg",
+    "contact": "9821247610"
+  },
+  "coords": {
+    "lat": 19.1388,
+    "lng": 72.8353
+  }
+}

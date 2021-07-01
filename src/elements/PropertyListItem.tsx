@@ -27,7 +27,7 @@ const Body = ({ className, img, id, price, location, title }: IProps) => {
 
 const PropertyListItem = styled(Body)`
   position: relative;
-  box-shadow: inset 0 -100rem 100rem ${(props) => props.theme.colors.a + "53"};
+  box-shadow: inset 0 -100rem 100rem ${(props) => props.theme.colors.a + "33"};
   /* background-image: url(${(props) => props.img}); */
   /* border: 1px solid blue; */
   width: 100%;
