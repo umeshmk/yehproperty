@@ -52,7 +52,13 @@ const Body = ({ className }: IStyled) => {
           <Project pid={activeProject} />
         </div>
         <div className="property-list">
-          <PropertyList data={projectList} handleClick={handleClick} />
+          {activeProject && (
+            <PropertyList
+              data={projectList}
+              active={activeProject}
+              handleClick={handleClick}
+            />
+          )}
         </div>
       </div>
       <div className="container">

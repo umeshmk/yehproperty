@@ -49,7 +49,6 @@ const Body = ({ className, pid }: IProps) => {
       <div className="content">
         <div className="content-header">
           <Title title={project.title} owner={`By ${project.developer.name}`} />
-          {/* <MyDate timestamp="2016-05-09T14:35:11Z" /> */}
           <Price price={Object.values(project.config)[0]} />
         </div>
         <ConfigPrice list={project.config} />

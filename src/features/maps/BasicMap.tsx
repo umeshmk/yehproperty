@@ -4,17 +4,11 @@ import { IStyled } from "../../types";
 import { useQuery } from "../../utility/useQuery";
 import { mapStyle } from "./style";
 
-// interface IProps {
-// mapDiv: HTMLElement;
-// }
-
 const Body = ({ className }: IStyled) => {
   const mapDiv = React.createRef<HTMLDivElement>();
   const query = useQuery();
 
   useEffect(() => {
-    // let map: google.maps.Map;
-
     if (google !== undefined) {
       let coords = {
         lat: Number(query.get("lat")),

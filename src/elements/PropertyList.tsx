@@ -6,12 +6,13 @@ import { IStyled, ProjectListType } from "../types";
 
 interface IProps extends IStyled {
   data: ProjectListType[] | null;
+  active: number;
   handleClick: (pid: number) => void;
   // handleClick: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const Body = ({ className, data, handleClick }: IProps) => {
-  const [current, setCurrent] = useState(0);
+const Body = ({ className, data, active, handleClick }: IProps) => {
+  const [current, setCurrent] = useState(0); // for carousel
   const ref = React.createRef<HTMLDivElement>();
 
   const handleSlide = (e: React.SyntheticEvent<HTMLElement>) => {
@@ -46,7 +47,11 @@ const Body = ({ className, data, handleClick }: IProps) => {
               onClick={() => handleClick(property.id)}
               key={property.id}
             >
-              <PropertyListItem {...property} key={property.id} />
+              <PropertyListItem
+                {...property}
+                active={active === property.id}
+                key={property.id}
+              />
             </div>
           );
         })}

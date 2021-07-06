@@ -86,9 +86,15 @@ const Body = ({ className, id }: IProps) => {
       <ConfigPrice className="configPrice" list={config} />
 
       <div className="configDetails">
-        {Object.entries(configDetails).map((i) => {
+        {Object.entries(configDetails).map((i, index) => {
           return (
-            <ConfigDetails config={i[0]} details={i[1]} price={config[i[0]]} />
+            <div key={index}>
+              <ConfigDetails
+                config={i[0]}
+                details={i[1]}
+                price={config[i[0]]}
+              />
+            </div>
           );
         })}
       </div>

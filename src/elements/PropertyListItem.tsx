@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { LocationSmall, PriceSmall } from ".";
 import { IStyled } from "../types";
-import { calculatePrice } from "../utility/calculatePrice";
 
 interface IProps extends IStyled {
   img: string;
@@ -9,6 +8,7 @@ interface IProps extends IStyled {
   price: string;
   title: string;
   location: string;
+  active: boolean;
 }
 
 const Body = ({ className, img, id, price, location, title }: IProps) => {
@@ -27,7 +27,12 @@ const Body = ({ className, img, id, price, location, title }: IProps) => {
 
 const PropertyListItem = styled(Body)`
   position: relative;
-  box-shadow: inset 0 -100rem 100rem ${(props) => props.theme.colors.a + "33"};
+  /* box-shadow: inset 0 -100rem 100rem ${(props) =>
+    props.theme.colors.a + "33"}; */
+
+  /* display: ${({ active }) => (active ? "none" : "block")}; */
+  box-shadow: ${({ theme, active }) =>
+    active ? "none" : " inset 0 -100rem 100rem " + theme.colors.a + "53"};
   /* background-image: url(${(props) => props.img}); */
   /* border: 1px solid blue; */
   width: 100%;

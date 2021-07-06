@@ -15,15 +15,13 @@ const Body = ({ className, list }: IProps) => {
         const { p, text } = calculatePrice(list[key]);
 
         return (
-          <>
-            <li key={key}>
-              {key} <small>x</small> <i className="fas fa-bed "></i>
-              <div>
-                <i className="fas fa-rupee-sign"></i>
-                {p} {text}
-              </div>
-            </li>
-          </>
+          <li key={key}>
+            {key} <small>x</small> <i className="fas fa-bed "></i>
+            <div>
+              <i className="fas fa-rupee-sign"></i>
+              {p} {text}
+            </div>
+          </li>
         );
       })}
     </ul>
