@@ -78,8 +78,8 @@ export const listSlice = createSlice({
 
 // export const { increment, incrementByAmount } = listSlice.actions;
 
-// The function below is called a selector
-// hook - useSelector((state: RootState) => state.counter.value)
+// Selector functions
+// -- usage : useSelector((state: RootState) => state.counter.value)
 export const selectListProjects = (state: RootState) => state.list.projects;
 export const selectActiveProject = (state: RootState) =>
   state.list.active.project;
