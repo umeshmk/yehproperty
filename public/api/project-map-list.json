@@ -6,8 +6,8 @@
     "title": "Ashar Aria",
     "location": "Thane",
     "coords": {
-      "lat": 19.1388,
-      "lng": 72.1353
+      "lat": 19.207041,
+      "lng": 73.00528
     }
   },
   {
@@ -17,8 +17,8 @@
     "title": "Runwal Bliss",
     "location": "Kanjurmarg",
     "coords": {
-      "lat": 19.2388,
-      "lng": 72.2353
+      "lat": 19.136259,
+      "lng": 72.929024
     }
   },
   {
@@ -28,8 +28,8 @@
     "title": "Lodha World Towers",
     "location": "Lower Parel",
     "coords": {
-      "lat": 19.3388,
-      "lng": 72.3353
+      "lat": 19.002157,
+      "lng": 72.841576
     }
   },
   {
@@ -39,8 +39,8 @@
     "title": "Rustomjee Crown Phase 2",
     "location": "Prabhadevi",
     "coords": {
-      "lat": 19.4388,
-      "lng": 72.4353
+      "lat": 19.015846,
+      "lng": 72.827995
     }
   },
   {
@@ -50,8 +50,8 @@
     "title": "Lodha Park",
     "location": "Lower Parel",
     "coords": {
-      "lat": 19.5388,
-      "lng": 72.5353
+      "lat": 19.007107,
+      "lng": 72.822098
     }
   },
   {
@@ -61,8 +61,8 @@
     "title": "JP North Barcelona",
     "location": "Mira Road",
     "coords": {
-      "lat": 19.6388,
-      "lng": 72.6353
+      "lat": 19.28714,
+      "lng": 72.868843
     }
   },
   {
@@ -72,8 +72,8 @@
     "title": "Kalpataru Paramount",
     "location": "Thane West",
     "coords": {
-      "lat": 19.7388,
-      "lng": 72.7353
+      "lat": 19.27634,
+      "lng": 72.959084
     }
   }
 ]

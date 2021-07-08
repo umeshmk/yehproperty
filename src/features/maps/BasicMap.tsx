@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IStyled } from "../../types";
 import { useQuery } from "../../utility/useQuery";
-import { mapStyle } from "./style";
+import { addMap } from "./addMap";
 
 const Body = ({ className }: IStyled) => {
-  const mapDiv = React.createRef<HTMLDivElement>();
+  const mapDivRef = React.createRef<HTMLDivElement>();
   const query = useQuery();
 
   useEffect(() => {
@@ -14,22 +14,17 @@ const Body = ({ className }: IStyled) => {
         lat: Number(query.get("lat")),
         lng: Number(query.get("lng")),
       };
-      new google.maps.Map(mapDiv.current as HTMLElement, {
+
+      let mapObject = addMap({
+        ref: mapDivRef.current,
         center: coords,
-        zoom: 12,
-        // zoomControl: false,
-        // panControl: false,
-        mapTypeId: "roadmap",
-        // mapTypeControl: false,
-        styles: mapStyle,
-        scrollwheel: true,
       });
     }
-  }, [mapDiv, query]);
+  }, [mapDivRef, query]);
 
   return (
     <div className={className}>
-      <div id="map" ref={mapDiv}></div>
+      <div id="map" ref={mapDivRef}></div>
     </div>
   );
 };
