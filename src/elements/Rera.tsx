@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { IStyled, ReraType } from "../types";
+import { IStyled, ProjectType } from "../types";
 
 interface IProps extends IStyled {
-  data: ReraType;
+  data: ProjectType["rera"];
 }
 
 const Body = ({ className, data }: IProps) => {

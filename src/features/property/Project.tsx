@@ -13,7 +13,7 @@ import {
   TitleBig,
   Rera,
 } from "../../elements";
-import { IStyled } from "../../types";
+import { IStyled, BhkType } from "../../types";
 import { _pick } from "../../utility/lodash";
 import { usePageTitle } from "../../utility/usePageTitle";
 import MapMarker from "../maps/MapMarker";
@@ -87,13 +87,11 @@ const Body = ({ className, id }: IProps) => {
 
       <div className="configDetails">
         {Object.entries(configDetails).map((i, index) => {
+          let price = config[i[0] as BhkType];
+
           return (
             <div key={index}>
-              <ConfigDetails
-                config={i[0]}
-                details={i[1]}
-                price={config[i[0]]}
-              />
+              <ConfigDetails config={i[0]} details={i[1]} price={price} />
             </div>
           );
         })}

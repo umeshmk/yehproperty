@@ -1,6 +1,10 @@
+// Responsibility
+// - list of project/buy/rent (welcome, search page)
+// - active project/buy/rent (welcome, search page)
+
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectListType, ProjectType, PropertyOptionsType } from "../../types";
+import { ProjectListType, ProjectType, PropertyType } from "../../types";
 
 interface ListState {
   projects: ProjectListType[] | null;
@@ -9,11 +13,6 @@ interface ListState {
   };
   //   status: "idle" | "loading" | "failed";
 }
-
-type PropertyType = {
-  type: PropertyOptionsType;
-  id: number;
-};
 
 const initialState: ListState = {
   projects: null,
@@ -39,7 +38,7 @@ export const getPropertyAsync = createAsyncThunk(
 
 export const getListAsync = createAsyncThunk(
   "list/fetchList",
-  async (type: PropertyOptionsType) => {
+  async (type: PropertyType["type"]) => {
     const url = "/api/" + type + "-list.json";
     console.log("Async - ", url);
     const response = await fetch(url);

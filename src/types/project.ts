@@ -1,9 +1,4 @@
-import { AddOnsType, AddressType, CoordsType } from "./commanTypes";
-
-export type ReraType = {
-  approved: boolean;
-  id: string | null;
-};
+import { AddOnsType, AddressType, BhkType, CoordsType } from "./commanTypes";
 
 export type ConfigDetailsType = {
   carpet: string;
@@ -12,16 +7,7 @@ export type ConfigDetailsType = {
   img: string;
 };
 
-export type DeveloperType = {
-  id: number;
-  name: string;
-  about: string;
-  office: string;
-  logo: string;
-  contact: string;
-};
-
-// For project page
+// For project page (check "public/api")
 export type ProjectType = {
   id: number;
   title: string;
@@ -33,20 +19,32 @@ export type ProjectType = {
   units: string;
   booked: string;
   config: {
-    [rooms: string]: string;
+    // [bhk: string]: string;
+    [key in BhkType]: string;
   };
   images: string[];
 
   address: AddressType;
-  rera: ReraType;
+  rera: {
+    approved: boolean;
+    id: string | null;
+  };
   about: string;
   highlights: string[];
   configDetails: {
-    [n: string]: ConfigDetailsType;
+    // [n: string]: ConfigDetailsType;
+    [key in BhkType]: ConfigDetailsType;
   };
   addOns: {
     [key in AddOnsType]: boolean;
   };
-  developer: DeveloperType;
+  developer: {
+    id: number;
+    name: string;
+    about: string;
+    office: string;
+    logo: string;
+    contact: string;
+  };
   coords: CoordsType;
 };

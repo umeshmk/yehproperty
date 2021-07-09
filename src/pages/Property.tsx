@@ -2,10 +2,10 @@
 import { useParams } from "react-router";
 import styled from "styled-components";
 import Project from "../features/property/Project";
-import { IStyled, PropertyOptionsType } from "../types";
+import { IStyled, PropertyType } from "../types";
 
 interface IProps extends IStyled {
-  type: PropertyOptionsType;
+  type: PropertyType["type"];
 }
 
 type Query = { id: string; property: string };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { IStyled, PropertyOptionsType } from "../../types";
+import { IStyled, PropertyType } from "../../types";
 import { Dropdown, Button } from "../../elements";
 import Places from "../maps/Places";
 import { ChangeEvent } from "places.js";
@@ -10,12 +10,14 @@ const StyledDropdown = styled(Dropdown)`
   border: none;
 `;
 
-const options: PropertyOptionsType[] = ["project", "buy", "rent"];
+type Options = PropertyType["type"];
+
+const options: Options[] = ["project", "buy", "rent"];
 
 const Body = ({ className }: IStyled) => {
   // const [searchUrl, setSearchUrl] = useState();
   const [coords, setCoords] = useState({ lat: 19.1388, lng: 72.8353 }); // Mumbai coords
-  const [selected, setSelected] = useState<PropertyOptionsType>(options[0]);
+  const [selected, setSelected] = useState<Options>(options[0]);
 
   const param = `type=${selected}&lat=${coords.lat}&lng=${coords.lng}`;
 
@@ -28,7 +30,7 @@ const Body = ({ className }: IStyled) => {
 
   const handleDropdownChange = (v: string) => {
     // if (options.includes(v)) {
-    setSelected(v as PropertyOptionsType);
+    setSelected(v as Options);
     // }
     console.log(v);
   };

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Text } from "../../elements";
-import { DeveloperType, IStyled } from "../../types";
+import { IStyled, ProjectType } from "../../types";
 
 interface IProps extends IStyled {
-  developer: DeveloperType;
+  developer: ProjectType["developer"];
 }
 
 const Body = ({ className, developer }: IProps) => {

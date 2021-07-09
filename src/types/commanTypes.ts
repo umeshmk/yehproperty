@@ -1,3 +1,5 @@
+export type BhkType = "1" | "2" | "3" | "4" | "5";
+
 export type CoordsType = {
   lat: number;
   lng: number;
