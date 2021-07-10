@@ -13,7 +13,7 @@ import {
 import { IStyled } from "../../types";
 import { _pick } from "../../utility/lodash";
 import { slugify } from "../../utility/slugify";
-import { getPropertyAsync, selectActiveProject } from "../reducers/listSlice";
+import { getPropertyAsync, selectActiveProject } from "../reducers/activeSlice";
 
 interface IProps extends IStyled {
   pid: number | null;

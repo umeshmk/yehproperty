@@ -1,40 +1,18 @@
 // Responsibility
 // - list of project/buy/rent (welcome, search page)
-// - active project/buy/rent (welcome, search page)
 
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectListType, ProjectType, PropertyType } from "../../types";
+import { ProjectListType, PropertyType } from "../../types";
 
 interface ListState {
   projects: ProjectListType[] | null;
-  active: {
-    project: ProjectType | null;
-  };
   //   status: "idle" | "loading" | "failed";
 }
 
 const initialState: ListState = {
   projects: null,
-  active: {
-    project: null,
-  },
-  //   status: "idle",
 };
-
-// action: `dispatch(incrementAsync(10))`
-// onClick={() => dispatch(incrementAsync(incrementValue))}
-export const getPropertyAsync = createAsyncThunk(
-  "list/fetchProperty",
-  async ({ type, id }: PropertyType) => {
-    const url = "/api/" + type + "/" + id + ".json";
-    console.log("Async - ", url);
-    const response = await fetch(url);
-    const json = await response.json();
-
-    return { type, json }; //  `fulfilled` action payload
-  }
-);
 
 export const getListAsync = createAsyncThunk(
   "list/fetchList",
@@ -44,7 +22,8 @@ export const getListAsync = createAsyncThunk(
     const response = await fetch(url);
     const json = await response.json();
 
-    return json; //  `fulfilled` action payload
+    // when `fulfilled` we have this as action.payload
+    return json;
   }
 );
 
@@ -60,18 +39,9 @@ export const listSlice = createSlice({
     // },
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(getListAsync.fulfilled, (state, action) => {
-        //   state.status = "idle";
-        state.projects = action.payload;
-      })
-      .addCase(getPropertyAsync.fulfilled, (state, action) => {
-        if (action.payload.type === "project")
-          state.active.project = action.payload.json;
-      });
-    //       .addCase(incrementAsync.pending, (state) => {
-    //         state.status = 'loading';
-    //       });
+    builder.addCase(getListAsync.fulfilled, (state, action) => {
+      state.projects = action.payload;
+    });
   },
 });
 
@@ -80,7 +50,5 @@ export const listSlice = createSlice({
 // Selector functions
 // -- usage : useSelector((state: RootState) => state.counter.value)
 export const selectListProjects = (state: RootState) => state.list.projects;
-export const selectActiveProject = (state: RootState) =>
-  state.list.active.project;
 
 export default listSlice.reducer;

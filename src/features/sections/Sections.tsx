@@ -5,7 +5,7 @@ import { PropertyList } from "../../elements";
 import { IStyled } from "../../types";
 import {
   getListAsync,
-  getPropertyAsync,
+  // getPropertyAsync,
   selectListProjects,
 } from "../reducers/listSlice";
 import Project from "./Project";
@@ -32,16 +32,12 @@ const Body = ({ className }: IStyled) => {
   useEffect(() => {
     if (projectList) {
       setActiveProject(projectList[0].id);
-      // dispatch(getPropertyAsync({ type: "project", id: 1 }));
     }
-  }, [projectList, dispatch]);
-
-  // console.log("section render");
+  }, [projectList]);
 
   // change active on click
   const handleClick = (pid: number) => {
     setActiveProject(pid);
-    // console.log(pid);
   };
 
   return (

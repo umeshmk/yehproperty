@@ -2,23 +2,18 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
-  Carousel,
   ConfigPrice,
   FeatureList,
-  Location,
-  LocationSmall,
   LocationLong,
   Text,
-  Title,
   TitleBig,
   Rera,
 } from "../../elements";
 import { IStyled, BhkType } from "../../types";
-import { _pick } from "../../utility/lodash";
 import { usePageTitle } from "../../utility/usePageTitle";
 import MapMarker from "../maps/MapMarker";
 
-import { getPropertyAsync, selectActiveProject } from "../reducers/listSlice";
+import { getPropertyAsync, selectDetailProject } from "../reducers/detailSlice";
 import AddOns from "./AddOns";
 import ConfigDetails from "./ConfigDetails";
 import Developer from "./Developer";
@@ -30,7 +25,7 @@ interface IProps extends IStyled {
 
 const Body = ({ className, id }: IProps) => {
   const dispatch = useAppDispatch();
-  const project = useAppSelector(selectActiveProject);
+  const project = useAppSelector(selectDetailProject);
   const { setPageTitle } = usePageTitle();
 
   useEffect(() => {
@@ -45,13 +40,13 @@ const Body = ({ className, id }: IProps) => {
 
   const {
     title,
-    location,
-    // type,
-    // possession,
-    // area,
-    // floors,
-    // units,
-    // booked,
+    // location,
+    type,
+    possession,
+    area,
+    floors,
+    units,
+    booked,
     config,
     images,
     address,
@@ -64,14 +59,14 @@ const Body = ({ className, id }: IProps) => {
     coords,
   } = project;
 
-  const features = _pick(project, [
-    "type",
-    "possession",
-    "area",
-    "floors",
-    "units",
-    "booked",
-  ]);
+  const features = {
+    type,
+    possession,
+    area,
+    floors,
+    units,
+    booked,
+  };
 
   return (
     <div className={className}>
@@ -82,7 +77,7 @@ const Body = ({ className, id }: IProps) => {
         {`${address.line}, ${address.locality}, ${address.city}, ${address.state} - ${address.pincode}`}
       </LocationLong>
 
-      <FeatureList className="features" list={features as {}} />
+      <FeatureList className="features" list={features} />
       <ConfigPrice className="configPrice" list={config} />
 
       <div className="configDetails">

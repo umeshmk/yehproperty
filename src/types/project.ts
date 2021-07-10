@@ -1,5 +1,36 @@
 import { AddOnsType, AddressType, BhkType, CoordsType } from "./commanTypes";
 
+// list item (min details)
+// ----------------------
+export type ProjectListType = {
+  id: number;
+  price: string;
+  img: string;
+  title: string;
+  location: string;
+  coords?: CoordsType;
+};
+
+// active project (medium details)
+// -------------------------------
+type activeProps =
+  | "id"
+  | "title"
+  | "location"
+  | "type"
+  | "possession"
+  | "area"
+  | "floors"
+  | "units"
+  | "booked"
+  | "config"
+  | "images"
+  | "developer";
+
+export type ProjectActiveType = Pick<ProjectType, activeProps>;
+
+// project (full details)
+// ----------------------
 export type ConfigDetailsType = {
   carpet: string;
   baths: string;
@@ -7,7 +38,6 @@ export type ConfigDetailsType = {
   img: string;
 };
 
-// For project page (check "public/api")
 export type ProjectType = {
   id: number;
   title: string;
@@ -23,7 +53,6 @@ export type ProjectType = {
     [key in BhkType]: string;
   };
   images: string[];
-
   address: AddressType;
   rera: {
     approved: boolean;
