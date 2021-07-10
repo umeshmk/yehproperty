@@ -8,7 +8,12 @@ export type ProjectListType = {
   img: string;
   title: string;
   location: string;
-  coords?: CoordsType;
+};
+
+// maplist item (min details)
+// ----------------------
+export type ProjectMapListType = ProjectListType & {
+  coords: CoordsType; // for map search marker
 };
 
 // active project (medium details)

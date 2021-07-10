@@ -7,7 +7,7 @@ import Footer from "./features/footer";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Property from "./pages/Property";
-import Search from "./pages/Search";
+import SearchMap from "./pages/Search";
 import ScrollToTop from "./utility/ScrollToTop";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Property type="rent" />
           </Route>
           <Route path="/search">
-            <Search />
+            <SearchMap />
           </Route>
           <Route exact path="/">
             <Welcome />

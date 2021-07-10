@@ -1,16 +1,16 @@
 // Responsibility
-// - list of project/buy/rent (welcome, search page)
+// - list of project/buy/rent (welcome page)
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { ProjectListType, PropertyType } from "../../types";
 
-interface ListState {
+interface State {
   projects: ProjectListType[] | null;
   //   status: "idle" | "loading" | "failed";
 }
 
-const initialState: ListState = {
+const initialState: State = {
   projects: null,
 };
 

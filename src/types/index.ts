@@ -1,6 +1,7 @@
 import { BhkType, CoordsType, AddOnsType, AddressType } from "./commanTypes";
 import {
   ProjectListType,
+  ProjectMapListType,
   ProjectActiveType,
   ProjectType,
   ConfigDetailsType,
@@ -17,6 +18,7 @@ export type PropertyType = {
 // re-export (from project)
 export type {
   ProjectListType,
+  ProjectMapListType,
   ProjectActiveType,
   ProjectType,
   ConfigDetailsType,

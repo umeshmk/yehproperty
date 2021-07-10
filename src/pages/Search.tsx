@@ -1,14 +1,14 @@
 // import React from "react";
 
 import styled from "styled-components";
-import BasicMap from "../features/maps/BasicMap";
+import SearchMap from "../features/search/SearchMap";
 import { IStyled } from "../types";
 
 const Body = ({ className }: IStyled) => {
   return (
     <div className={className}>
       <div className="map">
-        <BasicMap />
+        <SearchMap />
       </div>
     </div>
   );
