@@ -1,5 +1,7 @@
 // Responsibility
 // - Active property [medium details] (project/buy/rent) (welcome pages)
+// Note - Here we are fetching same jsondata as "detailSlice" just for convenience.
+//        In practice api will be different in real backend
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
