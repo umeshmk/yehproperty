@@ -23,16 +23,16 @@ const Body = ({ className, data, active, handleClick }: IProps) => {
       if (slide === "next" && current < data.length - 5) {
         PropertyListDiv.style.marginLeft = `-${(current + 1) * 20}%`;
         // imageListDiv.style.marginLeft = `-${(current + 1) * 40}%`;
-        console.log(slide, PropertyListDiv.style.marginLeft);
+        // console.log(slide, PropertyListDiv.style.marginLeft);
         setCurrent(current + 1);
-        console.log(current, "-->", current + 1);
+        // console.log(current, "-->", current + 1);
       }
       if (slide === "prev" && current > 0) {
         PropertyListDiv.style.marginLeft = `-${(current - 1) * 20}%`;
         // imageListDiv.style.marginLeft = `-${(current - 1) * 40}%`;
-        console.log(slide, PropertyListDiv.style.marginLeft);
+        // console.log(slide, PropertyListDiv.style.marginLeft);
         setCurrent(current - 1);
-        console.log(current - 1, "<--", current);
+        // console.log(current - 1, "<--", current);
       }
     }
   };
@@ -48,7 +48,7 @@ const Body = ({ className, data, active, handleClick }: IProps) => {
               key={property.id}
             >
               <PropertyListItem
-                {...property}
+                item={property}
                 active={active === property.id}
                 key={property.id}
               />

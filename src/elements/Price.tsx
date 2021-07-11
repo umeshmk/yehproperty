@@ -44,7 +44,9 @@ const PriceSmall = styled(Price)`
     font-size: ${(props) => props.theme.size.h5};
   }
   .fa-rupee-sign {
-    display: none;
+    /* display: none; */
+    color: ${(props) => props.theme.colors.c + "80"};
+    font-size: ${(props) => props.theme.size.h5};
   }
 `;
 

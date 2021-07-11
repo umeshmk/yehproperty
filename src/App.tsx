@@ -7,13 +7,13 @@ import Footer from "./features/footer";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Property from "./pages/Property";
-import SearchMap from "./pages/Search";
+import Search from "./pages/Search";
 import ScrollToTop from "./utility/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
-      <Router basename="yehproperty">
+      <Router basename={process.env.REACT_APP_ROUTER_BASENAME}>
         <ScrollToTop />
         <Nav />
 
@@ -28,7 +28,7 @@ function App() {
             <Property type="rent" />
           </Route>
           <Route path="/search">
-            <SearchMap />
+            <Search />
           </Route>
           <Route exact path="/">
             <Welcome />

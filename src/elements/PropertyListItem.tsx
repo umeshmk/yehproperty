@@ -1,17 +1,14 @@
 import styled from "styled-components";
 import { LocationSmall, PriceSmall } from ".";
-import { IStyled } from "../types";
+import { IStyled, ProjectListType } from "../types";
 
 interface IProps extends IStyled {
-  img: string;
-  id: number;
-  price: string;
-  title: string;
-  location: string;
+  item: ProjectListType;
   active: boolean;
 }
 
-const Body = ({ className, img, id, price, location, title }: IProps) => {
+const Body = ({ className, item }: IProps) => {
+  const { img, price, location, title } = item;
   const url = process.env.REACT_APP_IMAGE_SM_URL + img;
 
   return (
@@ -27,14 +24,8 @@ const Body = ({ className, img, id, price, location, title }: IProps) => {
 
 const PropertyListItem = styled(Body)`
   position: relative;
-  /* box-shadow: inset 0 -100rem 100rem ${(props) =>
-    props.theme.colors.a + "33"}; */
-
-  /* display: ${({ active }) => (active ? "none" : "block")}; */
   box-shadow: ${({ theme, active }) =>
     active ? "none" : " inset 0 -100rem 100rem " + theme.colors.a + "53"};
-  /* background-image: url(${(props) => props.img}); */
-  /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
   transition: all 300ms;

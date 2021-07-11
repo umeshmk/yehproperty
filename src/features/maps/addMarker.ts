@@ -6,12 +6,12 @@ console.log(icons);
 interface IMarker {
   map: google.maps.Map | null;
   coords: CoordsType;
-  title: string;
+  title?: string;
   icon: iconType;
 }
 
 export function addMarker(marker: IMarker) {
-  new google.maps.Marker({
+  return new google.maps.Marker({
     position: marker.coords,
     map: marker.map,
     title: marker.title,
