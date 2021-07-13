@@ -1,8 +1,6 @@
 import { CoordsType } from "../../types";
 import { icons, iconType } from "./markerIcons";
 
-console.log(icons);
-
 interface IMarker {
   map: google.maps.Map | null;
   coords: CoordsType;

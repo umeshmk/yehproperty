@@ -26,10 +26,8 @@ const Body = ({ className, handleChange }: IProps) => {
     });
 
     placesAutocomplete.configure(configure);
-    // placesAutocomplete.on("change", (e) => console.log(e.suggestion));
-    // placesAutocomplete.on("change", (e) => console.log(typeof e));
     placesAutocomplete.on("change", handleChange);
-  }, [ref, handleChange]);
+  }, []);
 
   const handleFocus = (e: React.SyntheticEvent<EventTarget>) => {
     (e.target as HTMLInputElement).value = "";

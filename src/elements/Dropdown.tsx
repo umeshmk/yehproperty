@@ -22,8 +22,6 @@ const ListBody = ({
   isVisible,
   handleClick,
 }: IPropsList) => {
-  console.log(isVisible);
-
   return (
     <ul className={className}>
       {options.map((key: string) => {
