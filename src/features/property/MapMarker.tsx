@@ -3,8 +3,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { CoordsType, IStyled } from "../../types";
-import { addMap } from "./addMap";
-import { addMarker } from "./addMarker";
+import { addMap } from "../maps/addMap";
+import { addMarker } from "../maps/addMarker";
 
 interface IProps extends IStyled {
   coords: CoordsType;

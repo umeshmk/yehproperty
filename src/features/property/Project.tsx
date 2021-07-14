@@ -11,7 +11,7 @@ import {
 } from "../../elements";
 import { IStyled, BhkType } from "../../types";
 import { usePageTitle } from "../../utility/usePageTitle";
-import MapMarker from "../maps/MapMarker";
+import MapMarker from "./MapMarker";
 
 import { getPropertyAsync, selectDetailProject } from "../reducers/detailSlice";
 import AddOns from "./AddOns";
