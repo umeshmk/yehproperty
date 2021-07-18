@@ -8,6 +8,7 @@ import { addMap } from "../maps/addMap";
 import { addMarker } from "../maps/addMarker";
 import { calculatePrice } from "../../utility/calculatePrice";
 import { slugify } from "../../utility/slugify";
+import Listing from "./Listing";
 
 const Body = ({ className }: IStyled) => {
   const dispatch = useAppDispatch();
@@ -93,6 +94,7 @@ const Body = ({ className }: IStyled) => {
   return (
     <div className={className}>
       <div id="map" ref={mapDivRef}></div>
+      <div id="listing">{mapList && <Listing data={mapList}></Listing>}</div>
     </div>
   );
 };
@@ -100,17 +102,29 @@ const Body = ({ className }: IStyled) => {
 const SearchMap = styled(Body)`
   height: 100%;
   width: 100%;
+  display: flex;
 
   #map {
     height: 100%;
-    width: 100%;
-    border: 1px solid;
+    width: 75%;
+    /* border: 1px solid; */
+  }
+
+  #listing {
+    width: 25%;
+    background-color: #fff;
+    background-color: #00000010;
+    background-color: ${(props) => props.theme.colors.b + "10"};
+    border-left: 1px solid ${(props) => props.theme.colors.b + "cc"};
+    /* padding: 1rem; */
+    overflow-y: scroll;
   }
 
   /* price below marker  */
   .markerBasePrice {
     /* background-color: ${(props) => props.theme.colors.a + "35"}; */
-    background-color: #dfdfdf;
+    /* background-color: #dfdfdf; */
+    background-color: #fff;
     height: 1.2rem;
     padding: 1px 5px;
     margin-top: 1.4rem;
