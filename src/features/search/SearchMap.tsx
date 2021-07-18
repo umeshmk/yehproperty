@@ -51,14 +51,17 @@ const Body = ({ className }: IStyled) => {
 
       // add all properties as markers
       mapList.forEach((item) => {
+        const { p, text } = calculatePrice(item.price);
+
         let marker = addMarker({
           map: mapObject,
           coords: item.coords,
+          text: p + " " + text,
+          textClass: className + " markerBasePrice",
           icon: "squareRound",
         });
 
         marker.addListener("mouseover", () => {
-          const { p, text } = calculatePrice(item.price);
           const content = `
           <a href="${linkTo(
             item.id,
@@ -104,11 +107,24 @@ const SearchMap = styled(Body)`
     border: 1px solid;
   }
 
+  /* price below marker  */
+  .markerBasePrice {
+    /* background-color: ${(props) => props.theme.colors.a + "35"}; */
+    background-color: #dfdfdf;
+    height: 1.2rem;
+    padding: 1px 5px;
+    margin-top: 1.4rem;
+    /* border: 2px solid ${(props) => props.theme.colors.a + "55"}; */
+    border: 1px solid #aaa;
+    border-radius: 2rem;
+  }
+
   /* infowindow content */
   .gm-style-iw-d div a {
     display: flex;
     align-items: center;
     text-decoration: none;
+
     .img {
       width: 6rem;
       img {

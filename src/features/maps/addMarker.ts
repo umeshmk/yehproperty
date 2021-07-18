@@ -5,6 +5,8 @@ interface IMarker {
   map: google.maps.Map | null;
   coords: CoordsType;
   title?: string;
+  text?: string;
+  textClass?: string;
   icon: iconType;
 }
 
@@ -13,6 +15,13 @@ export function addMarker(marker: IMarker) {
     position: marker.coords,
     map: marker.map,
     title: marker.title,
+    label: {
+      text: marker.text || "",
+      className: `${marker.textClass}`,
+      color: "#333",
+      fontWeight: "500",
+      // fontSize: "14px",
+    },
     icon: icons[marker.icon] || icons.pin,
     // icon: "https://res.cloudinary.com/dy4mautzh/image/upload/v1624862119/yehproperty/marker.svg",
   });
