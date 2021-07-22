@@ -15,7 +15,7 @@ const initialState: State = {
 };
 
 export const getMapAsync = createAsyncThunk(
-  "list/fetchList",
+  "map/fetchList",
   async (type: PropertyType["type"]) => {
     const url = "/api/" + type + "-map-list.json";
     console.log("Async - ", url);

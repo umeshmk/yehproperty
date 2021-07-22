@@ -29,6 +29,17 @@ const Body = ({ className, data }: IProps) => {
 
             <div className="wrap">
               <div className="title">{item.title}</div>
+              <div className="config">
+                <i className="fas fa-bed"></i> &nbsp;&nbsp;- &nbsp;
+                {Object.keys(item.config).map((config, i) => {
+                  return (
+                    <div key={config}>
+                      {config}&nbsp;
+                      {i !== Object.keys(item.config).length - 1 && "/"}
+                    </div>
+                  );
+                })}
+              </div>
 
               <div className="price">
                 <i className="fas fa-rupee-sign"></i>
@@ -80,6 +91,17 @@ const Listing = styled(Body)`
     }
     .location {
       display: flex;
+    }
+    .config {
+      display: flex;
+      align-items: center;
+      color: ${(props) => props.theme.colors.a + "c0"};
+      div {
+        color: ${(props) => props.theme.colors.b + "90"};
+        font-weight: 600;
+        /* margin-right: 1rem; */
+      }
+      /* justify-content: ; */
     }
     .price {
       font-family: ${(props) => props.theme.family.b};

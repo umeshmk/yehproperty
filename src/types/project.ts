@@ -13,6 +13,7 @@ export type ProjectListType = {
 // maplist item (min details)
 // ----------------------
 export type ProjectMapListType = ProjectListType & {
+  config: ProjectType["config"];
   coords: CoordsType; // for map search marker
 };
 

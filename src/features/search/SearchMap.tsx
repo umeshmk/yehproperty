@@ -11,9 +11,6 @@ import { slugify } from "../../utility/slugify";
 import Listing from "./Listing";
 
 const Body = ({ className }: IStyled) => {
-  const dispatch = useAppDispatch();
-  const mapList = useAppSelector(selectMapProjects);
-
   const mapDivRef = React.createRef<HTMLDivElement>();
   const query = useQuery();
   const propertyType = query.get("type") as PropertyType["type"];
@@ -21,6 +18,8 @@ const Body = ({ className }: IStyled) => {
     lat: Number(query.get("lat")),
     lng: Number(query.get("lng")),
   };
+  const dispatch = useAppDispatch();
+  const mapList = useAppSelector(selectMapProjects);
 
   // Router's <Link to={} > is a react component which can't be used in infowindow
   const linkTo = (id: number, title: string) => {
