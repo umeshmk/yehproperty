@@ -5,20 +5,24 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectActiveType, PropertyType } from "../../types";
+import { ProjectActiveType, BuyActiveType, PropertyType } from "../../types";
 
 interface State {
   project: ProjectActiveType | null;
+  buy: BuyActiveType | null;
+  rent: ProjectActiveType | null;
 }
 
 const initialState: State = {
   project: null,
+  buy: null,
+  rent: null,
 };
 
 // action: `dispatch(incrementAsync(10))`
 // onClick={() => dispatch(incrementAsync(incrementValue))}
 export const getPropertyAsync = createAsyncThunk(
-  "list/fetchProperty",
+  "active/fetchProperty",
   async ({ type, id }: PropertyType) => {
     const url = "/api/" + type + "/" + id + ".json";
     console.log("Async - ", url);
@@ -37,14 +41,12 @@ const activeSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getPropertyAsync.fulfilled, (state, action) => {
       let { type, json } = action.payload;
-
-      if (type === "project") {
-        state.project = json;
-      }
+      state[type] = json;
     });
   },
 });
 
 export const selectActiveProject = (state: RootState) => state.active.project;
+export const selectActiveBuy = (state: RootState) => state.active.buy;
 
 export default activeSlice.reducer;

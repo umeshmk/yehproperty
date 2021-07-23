@@ -12,7 +12,7 @@ const Body = ({ className, price }: IProps) => {
   return (
     <div className={className}>
       <i className="fas fa-rupee-sign"></i>
-      {p} <span>{text} +</span>
+      {p} <span>{text}</span>
     </div>
   );
 };

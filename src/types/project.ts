@@ -55,7 +55,6 @@ export type ProjectType = {
   units: string;
   booked: string;
   config: {
-    // [bhk: string]: string;
     [key in BhkType]: string;
   };
   images: string[];

@@ -21,6 +21,7 @@ const Title = styled(Body)`
     font-family: ${(props) => props.theme.family.a};
     font-size: ${(props) => props.theme.size.h3};
     font-weight: 600;
+    white-space: nowrap;
   }
   .owner {
     color: ${(props) => props.theme.colors.a};

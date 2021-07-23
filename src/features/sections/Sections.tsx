@@ -5,9 +5,10 @@ import { PropertyList } from "../../elements";
 import { IStyled } from "../../types";
 import {
   getListAsync,
-  // getPropertyAsync,
   selectListProjects,
+  selectListBuys,
 } from "../reducers/listSlice";
+import Buy from "./Buy";
 import Project from "./Project";
 
 const Heading = styled.div`
@@ -19,13 +20,16 @@ const Heading = styled.div`
 
 const Body = ({ className }: IStyled) => {
   const projectList = useAppSelector(selectListProjects);
+  const buyList = useAppSelector(selectListBuys);
   const dispatch = useAppDispatch();
 
   const [activeProject, setActiveProject] = useState<null | number>(null);
+  const [activeBuy, setActiveBuy] = useState<null | number>(null);
 
   // get projectslist
   useEffect(() => {
     dispatch(getListAsync("project"));
+    dispatch(getListAsync("buy"));
   }, [dispatch]);
 
   // set 1st project from projectlist as active
@@ -35,9 +39,19 @@ const Body = ({ className }: IStyled) => {
     }
   }, [projectList]);
 
+  useEffect(() => {
+    if (buyList) {
+      setActiveBuy(buyList[0].id);
+    }
+  }, [buyList]);
+
   // change active on click
-  const handleClick = (pid: number) => {
+  const handleProjectClick = (pid: number) => {
     setActiveProject(pid);
+  };
+
+  const handleBuyClick = (pid: number) => {
+    setActiveBuy(pid);
   };
 
   return (
@@ -52,13 +66,25 @@ const Body = ({ className }: IStyled) => {
             <PropertyList
               data={projectList}
               active={activeProject}
-              handleClick={handleClick}
+              handleClick={handleProjectClick}
             />
           )}
         </div>
       </div>
       <div className="container">
         <Heading>Buy</Heading>
+        <div className="property-banner">
+          <Buy pid={activeBuy} />
+        </div>
+        <div className="property-list">
+          {activeBuy && (
+            <PropertyList
+              data={buyList}
+              active={activeBuy}
+              handleClick={handleBuyClick}
+            />
+          )}
+        </div>
         {/* <Project /> */}
       </div>
       <div className="container">

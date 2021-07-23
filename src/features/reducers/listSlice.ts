@@ -3,15 +3,18 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectListType, PropertyType } from "../../types";
+import { BuyListType, ProjectListType, PropertyType } from "../../types";
 
 interface State {
-  projects: ProjectListType[] | null;
-  //   status: "idle" | "loading" | "failed";
+  project: ProjectListType[] | null;
+  buy: BuyListType[] | null;
+  rent: null;
 }
 
 const initialState: State = {
-  projects: null,
+  project: null,
+  buy: null,
+  rent: null,
 };
 
 export const getListAsync = createAsyncThunk(
@@ -23,7 +26,7 @@ export const getListAsync = createAsyncThunk(
     const json = await response.json();
 
     // when `fulfilled` we have this as action.payload
-    return json;
+    return { type, json };
   }
 );
 
@@ -40,7 +43,8 @@ export const listSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getListAsync.fulfilled, (state, action) => {
-      state.projects = action.payload;
+      const { type, json } = action.payload;
+      state[type] = json;
     });
   },
 });
@@ -49,6 +53,7 @@ export const listSlice = createSlice({
 
 // Selector functions
 // -- usage : useSelector((state: RootState) => state.counter.value)
-export const selectListProjects = (state: RootState) => state.list.projects;
+export const selectListProjects = (state: RootState) => state.list.project;
+export const selectListBuys = (state: RootState) => state.list.buy;
 
 export default listSlice.reducer;
