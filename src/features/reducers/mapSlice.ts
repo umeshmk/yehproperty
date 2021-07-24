@@ -3,15 +3,18 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectMapListType, PropertyType } from "../../types";
+import { BuyMapListType, ProjectMapListType, PropertyType } from "../../types";
 
 interface State {
-  projects: ProjectMapListType[] | null;
-  //   status: "idle" | "loading" | "failed";
+  project: ProjectMapListType[] | null;
+  buy: BuyMapListType[] | null;
+  rent: null;
 }
 
 const initialState: State = {
-  projects: null,
+  project: null,
+  buy: null,
+  rent: null,
 };
 
 export const getMapAsync = createAsyncThunk(
@@ -23,7 +26,7 @@ export const getMapAsync = createAsyncThunk(
     const json = await response.json();
 
     // when `fulfilled` we have this as action.payload
-    return json;
+    return { type, json };
   }
 );
 
@@ -33,7 +36,8 @@ export const mapSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getMapAsync.fulfilled, (state, action) => {
-      state.projects = action.payload;
+      let { type, json } = action.payload;
+      state[type] = json;
     });
   },
 });
@@ -42,6 +46,7 @@ export const mapSlice = createSlice({
 
 // Selector functions
 // -- usage : useSelector((state: RootState) => state.counter.value)
-export const selectMapProjects = (state: RootState) => state.map.projects;
+export const selectMapProjects = (state: RootState) => state.map.project;
+export const selectMapBuys = (state: RootState) => state.map.buy;
 
 export default mapSlice.reducer;

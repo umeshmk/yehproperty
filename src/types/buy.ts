@@ -10,6 +10,15 @@ export type BuyListType = {
   location: string;
 };
 
+// maplist item (min details)
+// ----------------------
+export type BuyMapListType = BuyListType & {
+  config: BuyType["config"];
+  age: BuyType["age"];
+  carpet: BuyType["configDetails"]["carpet"];
+  coords: CoordsType; // for map search marker
+};
+
 // active Buy (medium details)
 // -------------------------------
 type activeProps =

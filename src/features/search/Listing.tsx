@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import { IStyled, ProjectMapListType } from "../../types";
+import { IStyled, PropertyType } from "../../types";
 import { calculatePrice } from "../../utility/calculatePrice";
-import { Location, LocationSmall } from "../../elements";
+import { LocationSmall } from "../../elements";
 
 interface IProps extends IStyled {
-  data: ProjectMapListType[];
+  // data: ProjectMapListType[] | BuyMapListType[];
+  data: { [name: string]: any }[];
+  type: PropertyType["type"];
 }
 
-const Body = ({ className, data }: IProps) => {
+const Body = ({ className, data, type }: IProps) => {
   return (
     <div className={className}>
       {data.map((item) => {
@@ -28,7 +30,7 @@ const Body = ({ className, data }: IProps) => {
             </div>
 
             <div className="wrap">
-              <div className="title">{item.title}</div>
+              {type === "project" && <div className="title">{item.title}</div>}
               <div className="config">
                 <i className="fas fa-bed"></i> &nbsp;&nbsp;- &nbsp;
                 {Object.keys(item.config).map((config, i) => {
@@ -40,6 +42,12 @@ const Body = ({ className, data }: IProps) => {
                   );
                 })}
               </div>
+              {type === "buy" && (
+                <div>
+                  <div className="carpet">Area - {item.carpet} sqft</div>
+                  <div className="age">Age - {item.age} years</div>
+                </div>
+              )}
 
               <div className="price">
                 <i className="fas fa-rupee-sign"></i>

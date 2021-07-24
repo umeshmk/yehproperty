@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { IStyled, PropertyType } from "../../types";
 import { useQuery } from "../../utility/useQuery";
-import { getMapAsync, selectMapProjects } from "../reducers/mapSlice";
+import {
+  getMapAsync,
+  selectMapProjects,
+  selectMapBuys,
+} from "../reducers/mapSlice";
 import { addMap } from "../maps/addMap";
 import { addMarker } from "../maps/addMarker";
 import { calculatePrice } from "../../utility/calculatePrice";
@@ -18,8 +22,12 @@ const Body = ({ className }: IStyled) => {
     lat: Number(query.get("lat")),
     lng: Number(query.get("lng")),
   };
+
   const dispatch = useAppDispatch();
-  const mapList = useAppSelector(selectMapProjects);
+  const projectList = useAppSelector(selectMapProjects);
+  const buyList = useAppSelector(selectMapBuys);
+  let mapList = projectList;
+  if (propertyType === "buy") mapList = buyList;
 
   // Router's <Link to={} > is a react component which can't be used in infowindow
   const linkTo = (id: number, title: string) => {
@@ -93,7 +101,9 @@ const Body = ({ className }: IStyled) => {
   return (
     <div className={className}>
       <div id="map" ref={mapDivRef}></div>
-      <div id="listing">{mapList && <Listing data={mapList}></Listing>}</div>
+      <div id="listing">
+        {mapList && <Listing type={propertyType} data={mapList}></Listing>}
+      </div>
     </div>
   );
 };
