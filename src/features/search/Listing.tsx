@@ -42,10 +42,15 @@ const Body = ({ className, data, type }: IProps) => {
                   );
                 })}
               </div>
-              {type === "buy" && (
+              {type !== "project" && (
                 <div>
                   <div className="carpet">Area - {item.carpet} sqft</div>
-                  <div className="age">Age - {item.age} years</div>
+                  {type === "buy" && (
+                    <div className="age">Age - {item.age} years</div>
+                  )}
+                  {type === "rent" && (
+                    <div className="deposit">Deposit - {item.deposit} </div>
+                  )}
                 </div>
               )}
 

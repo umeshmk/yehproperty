@@ -1,0 +1,58 @@
+{
+  "id": 4,
+  "title": "1 BHK Flat For Rent In Inder Tower In Dadar West",
+  "location": "Dadar West",
+  "type": "Apartment",
+  "onFloors": "4",
+  "floors": "21",
+  "deposit": "50000",
+  "config": { "1": "22000" },
+  "configDetails": {
+    "carpet": "500",
+    "baths": "1"
+  },
+  "images": [
+    "buys/4/1.jpg",
+    "buys/4/2.jpg",
+    "buys/4/3.jpg",
+    "buys/4/4.jpg",
+    "buys/4/5.jpg"
+  ],
+  "address": {
+    "line": "",
+    "locality": "Dadar West",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400603"
+  },
+  "owner": {
+    "id": 3,
+    "isAgent": true,
+    "name": "Arvind Bhanushali",
+    "contact": "9821247610"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "coords": {
+    "lat": 19.021324,
+    "lng": 72.842415
+  }
+}

@@ -7,7 +7,13 @@ import {
   ConfigDetailsType,
 } from "./project";
 
-import { BuyListType, BuyActiveType, BuyMapListType } from "./buy";
+import { BuyListType, BuyActiveType, BuyMapListType, BuyType } from "./buy";
+import {
+  RentActiveType,
+  RentListType,
+  RentMapListType,
+  RentType,
+} from "./rent";
 
 export interface IStyled {
   className?: string;
@@ -28,6 +34,9 @@ export type {
 
 // re-export (from buy)
 export type { BuyListType, BuyActiveType, BuyMapListType };
+
+// re-export (from rent)
+export type { RentActiveType, RentListType, RentMapListType, RentType };
 
 // re-export (from commonTypes)
 export type { BhkType, CoordsType, AddOnsType, AddressType };

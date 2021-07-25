@@ -1,0 +1,66 @@
+{
+  "id": 3,
+  "title": "2 BHK Flat For Rent In A-3shankeswar Darshan Kalyan West In Kalyan West",
+  "location": "Kalyan West",
+  "type": "Apartment",
+  "onFloors": "1",
+  "floors": "4",
+  "deposit": "20000",
+  "config": { "2": "7000" },
+  "configDetails": {
+    "carpet": "740",
+    "baths": "2"
+  },
+  "images": [
+    "buys/3/1.jpg",
+    "buys/3/2.jpg",
+    "buys/3/3.jpg",
+    "buys/3/4.jpg",
+    "buys/3/5.jpg",
+    "buys/3/6.jpg",
+    "buys/3/7.jpg",
+    "buys/3/8.jpg",
+    "buys/3/9.jpg",
+    "buys/3/10.jpg",
+    "buys/3/11.jpg",
+    "buys/3/12.jpg",
+    "buys/3/13.jpg"
+  ],
+  "address": {
+    "line": "santoshi mata mandir,kala talav near to HDFC bank",
+    "locality": "Kalyan",
+    "city": "Thane",
+    "state": "Maharashtra",
+    "pincode": "400603"
+  },
+  "owner": {
+    "id": 2,
+    "isAgent": true,
+    "name": "Omkar Patil",
+    "contact": "9821247610"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "coords": {
+    "lat": 19.24033,
+    "lng": 73.130539
+  }
+}

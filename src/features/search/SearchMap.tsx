@@ -7,6 +7,7 @@ import {
   getMapAsync,
   selectMapProjects,
   selectMapBuys,
+  selectMapRents,
 } from "../reducers/mapSlice";
 import { addMap } from "../maps/addMap";
 import { addMarker } from "../maps/addMarker";
@@ -26,8 +27,10 @@ const Body = ({ className }: IStyled) => {
   const dispatch = useAppDispatch();
   const projectList = useAppSelector(selectMapProjects);
   const buyList = useAppSelector(selectMapBuys);
+  const rentList = useAppSelector(selectMapRents);
   let mapList = projectList;
   if (propertyType === "buy") mapList = buyList;
+  if (propertyType === "rent") mapList = rentList;
 
   // Router's <Link to={} > is a react component which can't be used in infowindow
   const linkTo = (id: number, title: string) => {

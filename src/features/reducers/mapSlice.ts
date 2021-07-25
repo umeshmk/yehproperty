@@ -3,12 +3,17 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { BuyMapListType, ProjectMapListType, PropertyType } from "../../types";
+import {
+  BuyMapListType,
+  ProjectMapListType,
+  PropertyType,
+  RentMapListType,
+} from "../../types";
 
 interface State {
   project: ProjectMapListType[] | null;
   buy: BuyMapListType[] | null;
-  rent: null;
+  rent: RentMapListType[] | null;
 }
 
 const initialState: State = {
@@ -48,5 +53,6 @@ export const mapSlice = createSlice({
 // -- usage : useSelector((state: RootState) => state.counter.value)
 export const selectMapProjects = (state: RootState) => state.map.project;
 export const selectMapBuys = (state: RootState) => state.map.buy;
+export const selectMapRents = (state: RootState) => state.map.rent;
 
 export default mapSlice.reducer;

@@ -1,0 +1,58 @@
+{
+  "id": 5,
+  "title": "2 BHK Flat For Rent In Gurukripa Building In Mulund West",
+  "location": "Mulund",
+  "type": "Apartment",
+  "onFloors": "1",
+  "floors": "11",
+  "deposit": "30000",
+  "config": { "2": "12000" },
+  "configDetails": {
+    "carpet": "340",
+    "baths": "1"
+  },
+  "images": [
+    "buys/5/1.jpg",
+    "buys/5/2.jpg",
+    "buys/5/3.jpg",
+    "buys/5/4.jpg",
+    "buys/5/5.jpg"
+  ],
+  "address": {
+    "line": "Mulund Colony",
+    "locality": "Mulund",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400603"
+  },
+  "owner": {
+    "id": 1,
+    "isAgent": true,
+    "name": "Shanker Pandit",
+    "contact": "9821247610"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "coords": {
+    "lat": 19.17218,
+    "lng": 72.955154
+  }
+}

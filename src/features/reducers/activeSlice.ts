@@ -5,12 +5,17 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectActiveType, BuyActiveType, PropertyType } from "../../types";
+import {
+  ProjectActiveType,
+  BuyActiveType,
+  RentActiveType,
+  PropertyType,
+} from "../../types";
 
 interface State {
   project: ProjectActiveType | null;
   buy: BuyActiveType | null;
-  rent: ProjectActiveType | null;
+  rent: RentActiveType | null;
 }
 
 const initialState: State = {
@@ -48,5 +53,6 @@ const activeSlice = createSlice({
 
 export const selectActiveProject = (state: RootState) => state.active.project;
 export const selectActiveBuy = (state: RootState) => state.active.buy;
+export const selectActiveRent = (state: RootState) => state.active.rent;
 
 export default activeSlice.reducer;

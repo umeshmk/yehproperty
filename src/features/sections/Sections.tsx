@@ -7,9 +7,11 @@ import {
   getListAsync,
   selectListProjects,
   selectListBuys,
+  selectListRents,
 } from "../reducers/listSlice";
 import Buy from "./Buy";
 import Project from "./Project";
+import Rent from "./Rent";
 
 const Heading = styled.div`
   color: ${(props) => props.theme.colors.a};
@@ -21,15 +23,18 @@ const Heading = styled.div`
 const Body = ({ className }: IStyled) => {
   const projectList = useAppSelector(selectListProjects);
   const buyList = useAppSelector(selectListBuys);
+  const rentList = useAppSelector(selectListRents);
   const dispatch = useAppDispatch();
 
   const [activeProject, setActiveProject] = useState<null | number>(null);
   const [activeBuy, setActiveBuy] = useState<null | number>(null);
+  const [activeRent, setActiveRent] = useState<null | number>(null);
 
   // get projectslist
   useEffect(() => {
     dispatch(getListAsync("project"));
     dispatch(getListAsync("buy"));
+    dispatch(getListAsync("rent"));
   }, [dispatch]);
 
   // set 1st project from projectlist as active
@@ -45,13 +50,21 @@ const Body = ({ className }: IStyled) => {
     }
   }, [buyList]);
 
+  useEffect(() => {
+    if (rentList) {
+      setActiveRent(rentList[0].id);
+    }
+  }, [rentList]);
+
   // change active on click
   const handleProjectClick = (pid: number) => {
     setActiveProject(pid);
   };
-
   const handleBuyClick = (pid: number) => {
     setActiveBuy(pid);
+  };
+  const handleRentClick = (pid: number) => {
+    setActiveRent(pid);
   };
 
   return (
@@ -85,11 +98,21 @@ const Body = ({ className }: IStyled) => {
             />
           )}
         </div>
-        {/* <Project /> */}
       </div>
       <div className="container">
         <Heading>Rent</Heading>
-        {/* <Project /> */}
+        <div className="property-banner">
+          <Rent pid={activeRent} />
+        </div>
+        <div className="property-list">
+          {activeRent && (
+            <PropertyList
+              data={rentList}
+              active={activeRent}
+              handleClick={handleRentClick}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
