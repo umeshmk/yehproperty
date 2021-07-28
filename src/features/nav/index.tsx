@@ -1,14 +1,7 @@
-// import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { IStyled } from "../../types";
-
-// Link
-const Li = styled.li`
-  color: ${(props) => props.theme.colors.b};
-  font-size: ${(props) => props.theme.size.h4};
-  font-weight: 300;
-`;
+import { IStyled, PropertyType } from "../../types";
+import { useQuery } from "../../utility/useQuery";
 
 const Logo = styled(Link)`
   color: ${(props) => props.theme.colors.a};
@@ -23,12 +16,17 @@ const Logo = styled(Link)`
   }
 `;
 
-let body = ({ className }: IStyled) => {
+let Body = ({ className }: IStyled) => {
+  const query = useQuery();
+  const activeType = query.get("type");
+
+  const isActive = (type: PropertyType["type"]) => {
+    if (type === activeType) return "active";
+  };
+
   return (
     <nav className={className}>
       <div className="logo">
-        {/* <img src={logo} alt="" />
-        <i className="far fa-heart fa-2x" aria-hidden="true"></i> */}
         <i className="fas fa-map-marker-alt fa-3x"> </i>
         <Logo to="/">
           <span>Yeh</span>property
@@ -36,20 +34,28 @@ let body = ({ className }: IStyled) => {
         </Logo>
       </div>
       <ul className="links">
-        <Li>
+        <li>
           {/* <img src={shortlist} alt="shorlist" title="shortlist" /> */}
           <i className="far fa-heart fa-lg" aria-hidden="true"></i>
-        </Li>
-        <Li>Project</Li>
-        <Li>Buy</Li>
-        <Li>Rent</Li>
-        <Li>Login</Li>
+        </li>
+        <Link to="/search?type=project&lat=19.1388&lng=72.8353">
+          <li className={isActive("project")}>Project</li>
+        </Link>
+        <Link to="/search?type=buy&lat=19.1388&lng=72.8353">
+          <li className={isActive("buy")}>Buy</li>
+        </Link>
+        <Link to="/search?type=rent&lat=19.1388&lng=72.8353">
+          <li className={isActive("rent")}>Rent</li>
+        </Link>
+        <a href="#login">
+          <li>Login</li>
+        </a>
       </ul>
     </nav>
   );
 };
 
-const Nav = styled(body)`
+const Nav = styled(Body)`
   position: absolute;
   top: 0;
   left: 0;
@@ -75,8 +81,21 @@ const Nav = styled(body)`
   & .links {
     /* border: 1px solid; */
     display: flex;
-    & li {
-      padding: 0 1rem;
+    li {
+      color: ${(props) => props.theme.colors.b + "c0"};
+      font-size: ${(props) => props.theme.size.h4};
+      font-weight: 400;
+    }
+    a {
+      margin: 0 1rem;
+      text-decoration: none;
+      &:hover li {
+        color: ${(props) => props.theme.colors.a};
+      }
+    }
+    .active {
+      font-weight: 600;
+      color: ${(props) => props.theme.colors.a};
     }
     & img {
       width: 2rem;
