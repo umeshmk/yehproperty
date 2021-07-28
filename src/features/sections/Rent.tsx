@@ -59,7 +59,7 @@ const Body = ({ className, pid }: IProps) => {
         <ConfigPrice list={rent.config} />
         <Button
           className="details"
-          to={`/buy/${rent.id}/${slugify(rent.title)}`}
+          to={`/rent/${rent.id}/${slugify(rent.title)}`}
         >
           Details
         </Button>

@@ -30,7 +30,7 @@ export const getPropertyAsync = createAsyncThunk(
   "active/fetchProperty",
   async ({ type, id }: PropertyType) => {
     const url = "/api/" + type + "/" + id + ".json";
-    console.log("Async - ", url);
+    // console.log("Async - ", url);
     const response = await fetch(url);
     const json = await response.json();
 

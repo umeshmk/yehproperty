@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "price": "24000",
-    "img": "buys/1/1.jpg",
-    "title": "2 BHK Flat For Rent0 In Lake Florence In Powai",
-    "location": "Powai"
+    "price": "12000",
+    "img": "buys/5/1.jpg",
+    "title": "2 BHK Flat For Rent In Gurukripa Building In Mulund West",
+    "location": "Mulund"
   },
   {
     "id": 2,
@@ -29,10 +29,10 @@
   },
   {
     "id": 5,
-    "price": "12000",
-    "img": "buys/5/1.jpg",
-    "title": "2 BHK Flat For Rent In Gurukripa Building In Mulund West",
-    "location": "Mulund"
+    "price": "24000",
+    "img": "buys/1/1.jpg",
+    "title": "2 BHK Flat For Rent0 In Lake Florence In Powai",
+    "location": "Powai"
   },
   {
     "id": 6,

@@ -26,7 +26,7 @@ export const getListAsync = createAsyncThunk(
   "list/fetchList",
   async (type: PropertyType["type"]) => {
     const url = "/api/" + type + "-list.json";
-    console.log("Async - ", url);
+    // console.log("Async - ", url);
     const response = await fetch(url);
     const json = await response.json();
 

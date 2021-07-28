@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "price": "24000",
-    "img": "buys/1/1.jpg",
-    "title": "2 BHK Flat For Sale In Lake Florence In Powai",
-    "location": "Powai",
-    "deposit": "50000",
-    "carpet": "850",
-    "config": { "2": "24000" },
+    "price": "12000",
+    "img": "buys/5/1.jpg",
+    "title": "2 BHK Flat For Sale In Gurukripa Building In Mulund West ",
+    "location": "Mulund",
+    "deposit": "30000",
+    "carpet": "340",
+    "config": { "2": "12000" },
     "coords": {
-      "lat": 19.119677,
-      "lng": 72.905083
+      "lat": 19.17218,
+      "lng": 72.955154
     }
   },
   {
@@ -57,16 +57,16 @@
   },
   {
     "id": 5,
-    "price": "12000",
-    "img": "buys/5/1.jpg",
-    "title": "2 BHK Flat For Sale In Gurukripa Building In Mulund West ",
-    "location": "Mulund",
-    "deposit": "30000",
-    "carpet": "340",
-    "config": { "2": "12000" },
+    "price": "24000",
+    "img": "buys/1/1.jpg",
+    "title": "2 BHK Flat For Sale In Lake Florence In Powai",
+    "location": "Powai",
+    "deposit": "50000",
+    "carpet": "850",
+    "config": { "2": "24000" },
     "coords": {
-      "lat": 19.17218,
-      "lng": 72.955154
+      "lat": 19.119677,
+      "lng": 72.905083
     }
   },
   {

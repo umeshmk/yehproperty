@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Project from "../features/property/Project";
 import Buy from "../features/property/Buy";
 import { IStyled, PropertyType } from "../types";
+import Rent from "../features/property/Rent";
 
 interface IProps extends IStyled {
   type: PropertyType["type"];
@@ -18,7 +19,7 @@ const Body = ({ className, type }: IProps) => {
     <div className={className}>
       {type === "project" && <Project id={Number(id)} />}
       {type === "buy" && <Buy id={Number(id)} />}
-      {/* {type === "rent" && <Rent id={id} />} */}
+      {type === "rent" && <Rent id={Number(id)} />}
     </div>
   );
 };
