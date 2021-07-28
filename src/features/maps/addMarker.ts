@@ -16,7 +16,7 @@ export function addMarker(marker: IMarker) {
     map: marker.map,
     title: marker.title,
     label: {
-      text: marker.text || "",
+      text: marker.text || " ", // single space is necessary empty string gives "[object object]" "
       className: `${marker.textClass}`,
       color: "#333",
       fontWeight: "500",

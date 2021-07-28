@@ -33,7 +33,7 @@ export type {
 };
 
 // re-export (from buy)
-export type { BuyListType, BuyActiveType, BuyMapListType };
+export type { BuyListType, BuyActiveType, BuyMapListType, BuyType };
 
 // re-export (from rent)
 export type { RentActiveType, RentListType, RentMapListType, RentType };

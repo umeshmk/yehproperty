@@ -24,9 +24,9 @@ const Body = ({ className, coords, title }: IProps) => {
       map: mapObject,
       coords: coords,
       title: title,
-      icon: "pin",
+      icon: "squareRound",
     });
-  }, []);
+  }, [coords]);
 
   return (
     <div className={className}>

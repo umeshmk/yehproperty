@@ -2,6 +2,7 @@
 import { useParams } from "react-router";
 import styled from "styled-components";
 import Project from "../features/property/Project";
+import Buy from "../features/property/Buy";
 import { IStyled, PropertyType } from "../types";
 
 interface IProps extends IStyled {
@@ -16,7 +17,7 @@ const Body = ({ className, type }: IProps) => {
   return (
     <div className={className}>
       {type === "project" && <Project id={Number(id)} />}
-      {/* {type === "buy" && <Buy id={id} />} */}
+      {type === "buy" && <Buy id={Number(id)} />}
       {/* {type === "rent" && <Rent id={id} />} */}
     </div>
   );

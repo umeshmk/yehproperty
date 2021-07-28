@@ -3,14 +3,18 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { ProjectType, PropertyType } from "../../types";
+import { ProjectType, PropertyType, BuyType, RentType } from "../../types";
 
 interface State {
   project: ProjectType | null;
+  buy: BuyType | null;
+  rent: RentType | null;
 }
 
 const initialState: State = {
   project: null,
+  buy: null,
+  rent: null,
 };
 
 export const getPropertyAsync = createAsyncThunk(
@@ -32,15 +36,14 @@ const detailSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getPropertyAsync.fulfilled, (state, action) => {
-      let { type, json } = action.payload;
-
-      if (type === "project") {
-        state.project = json;
-      }
+      const { type, json } = action.payload;
+      state[type] = json;
     });
   },
 });
 
 export const selectDetailProject = (state: RootState) => state.detail.project;
+export const selectDetailBuy = (state: RootState) => state.detail.buy;
+export const selectDetailRent = (state: RootState) => state.detail.rent;
 
 export default detailSlice.reducer;
