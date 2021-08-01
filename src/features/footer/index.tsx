@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { IStyled } from "../../types";
-
-type Property = "project" | "buy" | "rent";
+import { IStyled, PropertyType } from "../../types";
 
 const Title = styled.div`
   color: ${(props) => props.theme.colors.b};
@@ -26,7 +24,7 @@ const Link = styled.a`
   }
 `;
 
-const getList = (type: Property) => {
+const getList = (type: PropertyType["type"]) => {
   const cities = ["Mumbai", "Navi-Mumbai", "Thane", "Pune", "Nashik"];
 
   return cities.map((i) => {
@@ -90,7 +88,7 @@ const Body = ({ className }: IStyled) => {
         </div>
         <div className="copyright">
           © All rights reserved by &nbsp;
-          <Link href="https://umeshmk.github.com" title="Umesh Kadam">
+          <Link href="https://umeshmk.github.io/" title="Umesh Kadam">
             Umesh Kadam
           </Link>
         </div>
@@ -104,16 +102,17 @@ const Footer = styled(Body)`
   color: ${(props) => props.theme.colors.b};
   font-family: ${(props) => props.theme.family.a};
   padding: 5rem;
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
 
   .city-links {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0 3rem;
+    flex-wrap: wrap;
 
     & > div {
       padding: 0 3rem;
@@ -146,6 +145,33 @@ const Footer = styled(Body)`
     .copyright {
       color: ${(props) => props.theme.colors.b};
       font-weight: 800;
+    }
+    .copyright a {
+      color: ${(props) => props.theme.colors.a};
+    }
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    padding: 3rem 1rem;
+    .city-links {
+      padding: 0;
+      justify-content: space-around;
+
+      & > div {
+        padding: 1rem 1rem;
+      }
+    }
+    .about {
+      width: 100%;
+      padding: 2rem 1rem;
+      .social {
+        width: 100%;
+        padding: 3rem 0;
+      }
+      .email,
+      .copyright {
+        text-align: center;
+      }
     }
   }
 `;

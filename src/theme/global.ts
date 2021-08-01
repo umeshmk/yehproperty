@@ -16,6 +16,12 @@ interface ThemeInterface {
     h4: string;
     h5: string;
   };
+  breakpoint: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+  };
 }
 
 let theme: ThemeInterface = {
@@ -37,15 +43,15 @@ let theme: ThemeInterface = {
     h5: "0.9rem",
     // h5: "1rem" ,
   },
-  // breakpoint: {
-  // sm: "(max-width: 640px)",
-  // md: "(max-width: 1024px)",
-  // lg: "(max-width: 1536px)",
-  // xl: "(min-width: 1536px)",
-  // landscape: '(min-width: 640px) and (max-width: 1024px)',
-  // 768px
-  // 1280px
-  // },
+  breakpoint: {
+    sm: "max-width: 640px",
+    md: "max-width: 1024px",
+    lg: "max-width: 1536px",
+    xl: "min-width: 1537px",
+    // landscape: '(min-width: 640px) and (max-width: 1024px)',
+    // 768px
+    // 1280px
+  },
 };
 
 export default theme;
