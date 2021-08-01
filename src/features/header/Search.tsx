@@ -8,6 +8,10 @@ import { ChangeEvent } from "places.js";
 const StyledDropdown = styled(Dropdown)`
   width: 8rem;
   border: none;
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    width: 100%;
+  }
 `;
 
 type Options = PropertyType["type"];
@@ -34,7 +38,9 @@ const Body = ({ className }: IStyled) => {
         <Places handleChange={handleChange} />
       </div>
       <StyledDropdown options={options} handleChange={handleDropdownChange} />
-      <Button to={"/search?" + param}>Search</Button>
+      <Button className="btn" to={"/search?" + param}>
+        Search
+      </Button>
     </div>
   );
 };
@@ -44,16 +50,29 @@ const Search = styled(Body)`
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  /* flex-wrap: wrap; */
   padding: 3rem 4rem;
-  /* border-radius: 3rem; */
   background-color: ${(props) => props.theme.colors.c + "ff"};
   box-shadow: 0px 0px 40px #00000055;
-  /* box-shadow: 0px 0px 20px ${(props) => props.theme.colors.a + "bb"}; */
 
-  & .places-wrap {
-    /* width: 60%; */
+  .places-wrap {
     flex: 2;
-    /* display: inline-block; */
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    width: 100%;
+    padding: 1rem;
+    display: block;
+
+    .places-wrap {
+      width: 100%;
+      margin: 1rem 0 5px 0;
+    }
+    .btn {
+      margin: 2rem 0 0 0;
+      display: block;
+      width: 100%;
+    }
   }
 `;
 
