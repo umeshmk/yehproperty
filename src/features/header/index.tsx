@@ -33,7 +33,7 @@ const body = ({ className }: IStyled) => {
 };
 
 const Header = styled(body)`
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(${bg});
   background-position: 0 30%;
   box-shadow: inset 0 -50em 100em ${(props) => props.theme.colors.a + "99"};
@@ -41,7 +41,7 @@ const Header = styled(body)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding-bottom: 5rem;
 `;
 
 export default Header;
