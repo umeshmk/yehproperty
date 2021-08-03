@@ -24,5 +24,9 @@ const Search = styled(Body)`
     width: 100%;
     height: 100%;
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    margin: 0;
+  }
 `;
 export default Search;

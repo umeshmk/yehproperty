@@ -176,6 +176,15 @@ const SearchMap = styled(Body)`
       color: ${(props) => props.theme.colors.b};
     }
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    #map {
+      width: 100%;
+    }
+    #listing {
+      display: none;
+    }
+  }
 `;
 
 export default SearchMap;
