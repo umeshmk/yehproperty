@@ -4,7 +4,6 @@ import { IStyled } from "../types";
 
 interface IProps extends IStyled {
   children: string;
-  // children: string | JSX.Element;
 }
 
 const Body = ({ className, children }: IProps) => {
@@ -28,6 +27,14 @@ const Location = styled(Body)`
   .fas {
     padding-right: 0.5rem;
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    align-items: flex-start;
+    .fas {
+      padding-top: 0.3rem;
+      padding-right: 0.8rem;
+    }
+  }
 `;
 
 const LocationSmall = styled(Location)`
@@ -42,6 +49,11 @@ const LocationSmall = styled(Location)`
 const LocationLong = styled(Location)`
   border-radius: 2rem;
   padding: 0.3rem 1rem;
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    border-radius: 0;
+    padding: 1rem;
+  }
 `;
 
 export { Location, LocationSmall, LocationLong };

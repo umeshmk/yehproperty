@@ -22,6 +22,7 @@ const Body = ({ className, config, details, price }: IProps) => {
 
   return (
     <div className={className}>
+      <div className="bhk">{config} Bhk</div>
       <div>
         Bathrooms :
         <span>
@@ -54,6 +55,17 @@ const Body = ({ className, config, details, price }: IProps) => {
 const ConfigDetails = styled(Body)`
   font-family: ${(props) => props.theme.family.a};
   color: ${(props) => props.theme.colors.a + "c0"};
+  margin: 2rem 0;
+  border: 1px solid ${(props) => props.theme.colors.a + "c0"};
+  padding: 1rem;
+  .bhk {
+    font-size: ${(props) => props.theme.size.h3};
+    color: ${(props) => props.theme.colors.c};
+    background-color: ${(props) => props.theme.colors.a};
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
   span {
     padding: 1rem;
     color: ${(props) => props.theme.colors.b};

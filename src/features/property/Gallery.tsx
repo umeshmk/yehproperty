@@ -12,13 +12,18 @@ const Body = ({ className, images }: IProps) => {
   const [isActiveImg, setIsActiveImg] = useState(0);
 
   const handleClick = (show: boolean, activeImg: number | null) => {
+    console.log("clicked");
     setIsVisible(show);
     if (activeImg === null) return;
     setIsActiveImg(activeImg);
   };
+
   const handleStop = (e: React.SyntheticEvent<EventTarget>) => {
     e.stopPropagation();
   };
+
+  console.log("isVisible ", isVisible);
+  console.log("isActiveImg ", isActiveImg);
 
   return (
     <div className={className}>
@@ -37,6 +42,10 @@ const Body = ({ className, images }: IProps) => {
       </div>
       {isVisible && (
         <div className="fullscreen" onClick={() => handleClick(false, null)}>
+          <i
+            className="fas fa-times"
+            onClick={() => handleClick(false, null)}
+          ></i>
           <div onClick={handleStop}>
             <CarouselBig imageList={images} activeImg={isActiveImg} />
             {/* <Carousel imageList={images} /> */}
@@ -79,10 +88,39 @@ const Gallery = styled(Body)`
     padding: 0 20rem;
     /* border: 1px solid red; */
     background-color: ${(props) => props.theme.colors.b + "d0"};
+    text-align: right;
+    div {
+      height: 100vh;
+      /* border: 1px solid blue; */
+    }
+    .fas {
+      display: none;
+    }
   }
-  .fullscreen div {
-    height: 100vh;
-    /* border: 1px solid blue; */
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    padding: 0;
+    .thumbnails {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 5px;
+      div {
+        width: 45vw;
+      }
+    }
+    .fullscreen {
+      padding: 0;
+      height: 100vh;
+
+      .fas {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        color: ${(props) => props.theme.colors.a};
+        font-size: ${(props) => props.theme.size.h2};
+      }
+    }
   }
 `;
 

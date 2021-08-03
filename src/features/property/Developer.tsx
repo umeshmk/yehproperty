@@ -49,6 +49,11 @@ const Developer = styled(Body)`
   .fab {
     color: ${(props) => props.theme.colors.a};
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    padding: 1rem;
+    width: 100%;
+  }
 `;
 
 export default Developer;

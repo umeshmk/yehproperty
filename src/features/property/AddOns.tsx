@@ -44,6 +44,7 @@ const AddOns = styled(Body)`
   display: flex;
   justify-content: center;
   padding: 3rem;
+  flex-wrap: wrap;
   /* width: 100%; */
 
   .list {
@@ -56,6 +57,19 @@ const AddOns = styled(Body)`
   }
   .blur-true i {
     color: ${(props) => props.theme.colors.b + "30"};
+  }
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    /* justify-content: space-around; */
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    padding: 3rem 0;
+    text-align: center;
+    .list {
+      padding: 0;
+    }
   }
 `;
 

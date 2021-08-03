@@ -132,9 +132,6 @@ const Project = styled(Body)`
   .configPrice {
     width: 100%;
     justify-content: space-around;
-    > li {
-      /* border: 1px solid; */
-    }
   }
 
   .configDetails {
@@ -143,11 +140,6 @@ const Project = styled(Body)`
     justify-content: space-around;
     margin-bottom: 5rem;
     padding: 0 1rem;
-
-    > div {
-      /* border: 1px solid; */
-      /* padding-left: 3rem; */
-    }
   }
 
   q {
@@ -186,6 +178,32 @@ const Project = styled(Body)`
   .map {
     width: 60%;
     height: 20rem;
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    width: 100%;
+
+    .features {
+      padding: 1rem;
+    }
+
+    .configDetails {
+      flex-wrap: wrap;
+    }
+    q {
+      width: 100%;
+    }
+    .about,
+    .highlights {
+      padding: 0 2rem;
+    }
+    .highlights {
+      padding-top: 1rem;
+      justify-content: start;
+    }
+    .map {
+      width: 90%;
+    }
   }
 `;
 

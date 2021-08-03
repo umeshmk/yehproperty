@@ -30,6 +30,10 @@ const Property = styled(Body)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    margin: 5rem 0;
+  }
 `;
 
 export default Property;

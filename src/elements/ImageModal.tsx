@@ -22,7 +22,7 @@ const ImageModal = styled(Body)`
   max-height: 80vh;
   background-color: ${(props) => props.theme.colors.a};
   background-color: ${(props) => props.theme.colors.a + "95"};
-  border: 10px solid ${(props) => props.theme.colors.a};
+  border: 5px solid ${(props) => props.theme.colors.a};
   background-repeat: no-repeat;
   background-position: center center;
   /* background-size: contain; */
@@ -31,6 +31,14 @@ const ImageModal = styled(Body)`
   /* text-align: center; */
   justify-content: center;
   align-items: center;
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    width: 100vw;
+    max-height: 80vh;
+    top: 0;
+    left: 0;
+    background-size: contain;
+  }
 `;
 
 export default ImageModal;
