@@ -64,7 +64,7 @@ const Body = ({ className, id }: IProps) => {
 
   return (
     <div className={className}>
-      <TitleBig title={title} owner={owner.name} />
+      <TitleBig className="title" title={title} owner={owner.name} />
 
       <LocationLong>
         {`${address.line}, ${address.locality}, ${address.city}, ${address.state} - ${address.pincode}`}
@@ -97,6 +97,10 @@ const Buy = styled(Body)`
   /* justify-content: center; */
   flex-direction: column;
   align-items: center;
+
+  .title {
+    font-size: ${(props) => props.theme.size.h2};
+  }
 
   .price {
     margin-top: 2rem;
@@ -144,6 +148,29 @@ const Buy = styled(Body)`
   .map {
     width: 60%;
     height: 20rem;
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    width: 100%;
+
+    .features {
+      padding: 1rem;
+    }
+
+    q {
+      width: 100%;
+    }
+    .about,
+    .highlights {
+      padding: 0 2rem;
+    }
+    .highlights {
+      padding-top: 1rem;
+      justify-content: start;
+    }
+    .map {
+      width: 90%;
+    }
   }
 `;
 
