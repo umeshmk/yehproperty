@@ -39,6 +39,12 @@ const FeatureList = styled(Body)`
     color: ${(props) => props.theme.colors.b};
     margin-top: 1rem;
   }
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    flex-wrap: wrap;
+    li {
+      padding: 1rem 0.51rem;
+    }
+  }
 `;
 
 export default FeatureList;

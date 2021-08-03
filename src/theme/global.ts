@@ -21,6 +21,11 @@ interface ThemeInterface {
     md: string;
     lg: string;
     xl: string;
+    value: {
+      sm: number;
+      md: number;
+      lg: number;
+    };
   };
 }
 
@@ -48,6 +53,11 @@ let theme: ThemeInterface = {
     md: "max-width: 1024px",
     lg: "max-width: 1536px",
     xl: "min-width: 1537px",
+    value: {
+      sm: 640,
+      md: 1024,
+      lg: 1536,
+    },
     // landscape: '(min-width: 640px) and (max-width: 1024px)',
     // 768px
     // 1280px

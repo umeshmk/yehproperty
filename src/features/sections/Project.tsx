@@ -49,7 +49,7 @@ const Body = ({ className, pid }: IProps) => {
       <div className="content">
         <div className="content-header">
           <Title title={project.title} owner={`By ${project.developer.name}`} />
-          <Price price={Object.values(project.config)[0]} />
+          <Price className="price" price={Object.values(project.config)[0]} />
         </div>
         <ConfigPrice list={project.config} />
         <Button
@@ -115,6 +115,28 @@ const Project = styled(Body)`
     margin: 0 auto;
     width: 40%;
     margin-bottom: 1rem;
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+
+    .carousel {
+      width: 100%;
+      height: 40vh;
+    }
+    .content {
+      width: 100%;
+    }
+    .content-header {
+      /* width: 100%; */
+      flex-wrap: wrap;
+      padding: 1rem;
+      .price {
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 `;
 export default Project;

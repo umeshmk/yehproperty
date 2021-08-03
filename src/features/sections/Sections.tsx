@@ -142,6 +142,24 @@ const Sections = styled(Body)`
   .property-list {
     width: 70%;
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    .container {
+      /* padding: 0; */
+      /* border: 1px solid blue; */
+    }
+    .property-banner {
+      width: 100%;
+      /* padding: 1rem; */
+      /* height: 50%;
+      position: relative; */
+      /* padding-bottom: 2rem; */
+    }
+    .property-list {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
 `;
 
 export default Sections;
