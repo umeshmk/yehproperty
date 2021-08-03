@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ButtonSlide, PropertyListItem } from ".";
 import { IStyled, ProjectListType } from "../types";
 
@@ -14,23 +14,25 @@ interface IProps extends IStyled {
 const Body = ({ className, data, active, handleClick }: IProps) => {
   const [current, setCurrent] = useState(0); // for carousel
   const ref = React.createRef<HTMLDivElement>();
+  const theme = useTheme();
 
   const handleSlide = (e: React.SyntheticEvent<HTMLElement>) => {
     const PropertyListDiv = ref.current;
     const { slide } = e.currentTarget.dataset;
 
+    // for mobile:desktop
+    const width = window.screen.width < theme.breakpoint.value.sm ? 50 : 20; // in percent
+    const itemsPerScreen =
+      window.screen.width < theme.breakpoint.value.sm ? 2 : 5; // max items visible before scroll next
+
     if (PropertyListDiv && data) {
-      if (slide === "next" && current < data.length - 5) {
-        PropertyListDiv.style.marginLeft = `-${(current + 1) * 20}%`;
-        // imageListDiv.style.marginLeft = `-${(current + 1) * 40}%`;
-        // console.log(slide, PropertyListDiv.style.marginLeft);
+      if (slide === "next" && current < data.length - itemsPerScreen) {
+        PropertyListDiv.style.marginLeft = `-${(current + 1) * width}%`;
         setCurrent(current + 1);
         // console.log(current, "-->", current + 1);
       }
       if (slide === "prev" && current > 0) {
-        PropertyListDiv.style.marginLeft = `-${(current - 1) * 20}%`;
-        // imageListDiv.style.marginLeft = `-${(current - 1) * 40}%`;
-        // console.log(slide, PropertyListDiv.style.marginLeft);
+        PropertyListDiv.style.marginLeft = `-${(current - 1) * width}%`;
         setCurrent(current - 1);
         // console.log(current - 1, "<--", current);
       }
@@ -99,6 +101,12 @@ const PropertyList = styled(Body)`
     /* border: 1px solid red; */
 
     /* min-height: 3rem; */
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    .property-box {
+      width: 50%;
+    }
   }
 `;
 
