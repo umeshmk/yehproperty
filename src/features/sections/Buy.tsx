@@ -52,7 +52,7 @@ const Body = ({ className, pid }: IProps) => {
             <Title title={buy.title} owner={`By ${buy.owner.name}`} />
           </div>
           <div className="price-wrap">
-            <Price price={Object.values(buy.config)[0]} />
+            <Price className="price" price={Object.values(buy.config)[0]} />
           </div>
         </div>
         <ConfigPrice list={buy.config} />
@@ -120,6 +120,27 @@ const Buy = styled(Body)`
     margin: 0 auto;
     width: 40%;
     margin-bottom: 1rem;
+  }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+
+    .carousel {
+      width: 100%;
+      height: 40vh;
+    }
+    .content {
+      width: 100%;
+    }
+    .content-header {
+      /* width: 100%; */
+      flex-wrap: wrap;
+      padding: 1rem;
+      .price-wrap {
+        display: none;
+      }
+    }
   }
 `;
 export default Buy;

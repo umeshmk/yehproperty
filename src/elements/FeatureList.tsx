@@ -40,10 +40,10 @@ const FeatureList = styled(Body)`
     margin-top: 1rem;
   }
   @media all and (${(props) => props.theme.breakpoint.sm}) {
-    flex-wrap: wrap;
-    li {
-      padding: 1rem 0.51rem;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
   }
 `;
 

@@ -125,5 +125,26 @@ const Buy = styled(Body)`
     width: 40%;
     margin-bottom: 1rem;
   }
+
+  @media all and (${(props) => props.theme.breakpoint.sm}) {
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+
+    .carousel {
+      width: 100%;
+      height: 40vh;
+    }
+    .content {
+      width: 100%;
+    }
+    .content-header {
+      /* width: 100%; */
+      flex-wrap: wrap;
+      padding: 1rem;
+      .price-wrap {
+        display: none;
+      }
+    }
+  }
 `;
 export default Buy;

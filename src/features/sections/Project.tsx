@@ -133,8 +133,7 @@ const Project = styled(Body)`
       flex-wrap: wrap;
       padding: 1rem;
       .price {
-        width: 100%;
-        text-align: center;
+        display: none;
       }
     }
   }
