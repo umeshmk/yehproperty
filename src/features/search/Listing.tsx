@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { IStyled, PropertyType } from "../../types";
 import { calculatePrice } from "../../utility/calculatePrice";
 import { LocationSmall } from "../../elements";
+import { Link } from "react-router-dom";
+import { slugify } from "../../utility/slugify";
 
 interface IProps extends IStyled {
   // data: ProjectMapListType[] | BuyMapListType[];
@@ -15,7 +17,12 @@ const Body = ({ className, data, type }: IProps) => {
       {data.map((item) => {
         let { p, text } = calculatePrice(item.price);
         return (
-          <div className="item" key={item.id} id={`${item.id}`}>
+          <Link
+            to={`/${type}/${item.id}/${slugify(item.title)}`}
+            className="item"
+            key={item.id}
+            id={`${item.id}`}
+          >
             <div
               className="img"
               style={{
@@ -43,14 +50,10 @@ const Body = ({ className, data, type }: IProps) => {
                 })}
               </div>
               {type !== "project" && (
-                <div>
-                  <div className="carpet">Area - {item.carpet} sqft</div>
-                  {type === "buy" && (
-                    <div className="age">Age - {item.age} years</div>
-                  )}
-                  {type === "rent" && (
-                    <div className="deposit">Deposit - {item.deposit} </div>
-                  )}
+                <div className="innertext">
+                  <div>Area - {item.carpet} sqft</div>
+                  {type === "buy" && <div>Age - {item.age} years</div>}
+                  {type === "rent" && <div>Deposit - {item.deposit} </div>}
                 </div>
               )}
 
@@ -60,7 +63,7 @@ const Body = ({ className, data, type }: IProps) => {
                 {p} {text}
               </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>
@@ -69,20 +72,23 @@ const Body = ({ className, data, type }: IProps) => {
 
 const Listing = styled(Body)`
   padding: 1rem;
+
   .item {
     display: flex;
-    /* justify-content: flex-start; */
     justify-content: stretch;
     align-items: stretch;
     /* border: 1px solid #ccc; */
     background-color: #fff;
     box-shadow: 0 0 2px #000;
-    /* background-color: ${(props) => props.theme.colors.a + "25"}; */
-    /* padding: 1rem; */
-    /* margin: 1rem; */
     height: 8rem;
     cursor: pointer;
+    text-decoration: none;
+    text-shadow: none;
+    transition: all 0.1s ease;
 
+    :hover {
+      background-color: ${(props) => props.theme.colors.a + "10"};
+    }
     .img {
       width: 10rem;
       /* height: 8rem; */
@@ -115,6 +121,9 @@ const Listing = styled(Body)`
         /* margin-right: 1rem; */
       }
       /* justify-content: ; */
+    }
+    .innertext {
+      color: ${(props) => props.theme.colors.b};
     }
     .price {
       font-family: ${(props) => props.theme.family.b};
