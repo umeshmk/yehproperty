@@ -9,6 +9,7 @@ import {
   PropertyType,
   RentListType,
 } from "../../types";
+import { baseApiUrl } from "../../utility/baseApiUrl";
 
 interface State {
   project: ProjectListType[] | null;
@@ -25,8 +26,8 @@ const initialState: State = {
 export const getListAsync = createAsyncThunk(
   "list/fetchList",
   async (type: PropertyType["type"]) => {
-    const url = "/api/" + type + "-list.json";
-    // console.log("Async - ", url);
+    const url = baseApiUrl + type + "-list.json";
+    // console.log("Async -", url);
     const response = await fetch(url);
     const json = await response.json();
 

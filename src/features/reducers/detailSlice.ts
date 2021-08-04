@@ -4,6 +4,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { ProjectType, PropertyType, BuyType, RentType } from "../../types";
+import { baseApiUrl } from "../../utility/baseApiUrl";
 
 interface State {
   project: ProjectType | null;
@@ -18,10 +19,10 @@ const initialState: State = {
 };
 
 export const getPropertyAsync = createAsyncThunk(
-  "list/fetchProperty",
+  "detail/fetchProperty",
   async ({ type, id }: PropertyType) => {
-    const url = "/api/" + type + "/" + id + ".json";
-    console.log("Async - ", url);
+    const url = baseApiUrl + type + "/" + id + ".json";
+    // console.log("Async - ", url);
     const response = await fetch(url);
     const json = await response.json();
 
