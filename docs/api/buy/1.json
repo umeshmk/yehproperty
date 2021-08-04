@@ -1,0 +1,62 @@
+{
+  "id": 1,
+  "title": "2 BHK Flat For Sale In Lake Florence In Powai",
+  "location": "Powai",
+  "type": "Apartment",
+  "onFloors": "14",
+  "floors": "18",
+  "age": "3",
+  "config": { "2": "24000000" },
+  "configDetails": {
+    "carpet": "850",
+    "baths": "2"
+  },
+  "images": [
+    "buys/1/1.jpg",
+    "buys/1/2.jpg",
+    "buys/1/3.jpg",
+    "buys/1/4.jpg",
+    "buys/1/5.jpg",
+    "buys/1/6.jpg",
+    "buys/1/7.jpg",
+    "buys/1/8.jpg",
+    "buys/1/9.jpg"
+  ],
+  "address": {
+    "line": "DP road, chandivali farm roa, near powai police station",
+    "locality": "Powai",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400603"
+  },
+  "owner": {
+    "id": 1,
+    "isAgent": true,
+    "name": "Shanker Pandit",
+    "contact": "9821247610"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "coords": {
+    "lat": 19.119677,
+    "lng": 72.905083
+  }
+}

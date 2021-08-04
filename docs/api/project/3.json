@@ -1,0 +1,78 @@
+{
+  "id": 3,
+  "title": "Lodha World Towers",
+  "location": "Lower Parel",
+  "type": "Apartment",
+  "possession": "2022",
+  "area": "1 acres",
+  "floors": "55",
+  "units": "350",
+  "booked": "135",
+  "config": {
+    "2": "24000000",
+    "3": "33000000"
+  },
+  "images": [
+    "projects/3/1.jpg",
+    "projects/3/2.jpg",
+    "projects/3/3.jpg",
+    "projects/3/4.jpg"
+  ],
+  "address": {
+    "line": "Ward G South",
+    "locality": "Lower Parel",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400605"
+  },
+  "rera": {
+    "approved": true,
+    "id": "P51700017518"
+  },
+  "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum repellendus quia ducimus dolores dicta similique necessitatibus aliquid mollitia provident. Minima obcaecati dignissimos delectus nam ut quis eos. Voluptate, dignissimos.",
+  "highlights": [
+    "Swimming Pool",
+    "Jogging Park",
+    "70% open space",
+    "Club membership",
+    "Close proximity to markets, school, etc"
+  ],
+  "configDetails": {
+    "2": {
+      "carpet": "540",
+      "baths": "2",
+      "bookingPrice": "800000",
+      "img": "projects/3/2bhk.jpg"
+    },
+    "3": {
+      "carpet": "930",
+      "baths": "3",
+      "bookingPrice": "1600000",
+      "img": "projects/3/3bhk.jpg"
+    }
+  },
+  "addOns": {
+    "open park": false,
+    "security": true,
+    "cctv": true,
+    "fire safety": false,
+    "swimming pool": true,
+    "club house": true,
+    "gymnasium": false,
+    "elevator": true,
+    "power backup": false,
+    "parking": true
+  },
+  "developer": {
+    "id": 1,
+    "name": "Lodha Developers",
+    "about": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ea    quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis. Lorem, ipsum dolor sit amet    consectetur adipisicing elit. Velit ea quidem dolorem, inventore    mollitia provident reprehenderit soluta necessitatibus vero? Eaque    placeat, ipsa numquam doloremque natus a reprehenderit officia saepe    officiis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit    ea quidem dolorem, inventore mollitia provident reprehenderit soluta    necessitatibus vero? Eaque placeat, ipsa numquam doloremque natus a    reprehenderit officia saepe officiis.",
+    "office": "11th Floor, Ashar IT Park, Jayshri Baug, Road No. 16/Z, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+    "logo": "projects/3/logo.jpg",
+    "contact": "9821247610"
+  },
+  "coords": {
+    "lat": 19.002157,
+    "lng": 72.841576
+  }
+}
