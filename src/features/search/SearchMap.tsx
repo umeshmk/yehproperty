@@ -74,10 +74,7 @@ const Body = ({ className }: IStyled) => {
 
         marker.addListener("mouseover", () => {
           const content = `
-          <a href="${linkTo(
-            item.id,
-            item.title
-          )}" target="_blank" rel="noopener noreferrer">
+          <a href="${linkTo(item.id, item.title)}" rel="noopener noreferrer">
             <div class="img">
               <img src="${process.env.REACT_APP_IMAGE_SM_URL + item.img}"/>
             </div>          
