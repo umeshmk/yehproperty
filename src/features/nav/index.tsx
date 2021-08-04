@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IStyled, PropertyType } from "../../types";
+import useClickOutside from "../../utility/useClickOutside";
 import { useQuery } from "../../utility/useQuery";
 import Links from "./Links";
 
@@ -19,18 +20,28 @@ const Logo = styled(Link)`
 `;
 
 let Body = ({ className }: IStyled) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const { ref, isVisible, setIsVisible } = useClickOutside(false);
 
   const query = useQuery();
   const activeType = query.get("type") as PropertyType["type"];
 
   const handleClick = () => {
-    setIsVisible(!isVisible);
+    setShowNav(!showNav);
   };
 
-  // Mobile only - close the links after a click inside
+  // Mobile only - close links after a click outside
   useEffect(() => {
-    setIsVisible(false);
+    if (showNav) setIsVisible(true);
+  }, [showNav, setIsVisible]);
+
+  useEffect(() => {
+    if (!isVisible) setShowNav(false);
+  }, [isVisible]);
+
+  // Mobile only - close links after a clicking (project/buy/rent) inside nav
+  useEffect(() => {
+    setShowNav(false);
   }, [activeType]);
 
   return (
@@ -44,12 +55,12 @@ let Body = ({ className }: IStyled) => {
           </Logo>
         </div>
         <div className="switch" onClick={handleClick}>
-          {!isVisible && <i className=" fas fa-bars"></i>}
-          {isVisible && <i className=" fas fa-times"></i>}
+          {!showNav && <i className=" fas fa-bars"></i>}
+          {showNav && <i className=" fas fa-times"></i>}
         </div>
       </div>
-      <div className="links">
-        {isVisible && <Links activeType={activeType} />}
+      <div className="links" ref={ref}>
+        {showNav && <Links activeType={activeType} />}
       </div>
       <div className="links-desktop">
         <Links activeType={activeType} />

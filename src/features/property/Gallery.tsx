@@ -12,7 +12,6 @@ const Body = ({ className, images }: IProps) => {
   const [isActiveImg, setIsActiveImg] = useState(0);
 
   const handleClick = (show: boolean, activeImg: number | null) => {
-    console.log("clicked");
     setIsVisible(show);
     if (activeImg === null) return;
     setIsActiveImg(activeImg);
@@ -21,9 +20,6 @@ const Body = ({ className, images }: IProps) => {
   const handleStop = (e: React.SyntheticEvent<EventTarget>) => {
     e.stopPropagation();
   };
-
-  console.log("isVisible ", isVisible);
-  console.log("isActiveImg ", isActiveImg);
 
   return (
     <div className={className}>
