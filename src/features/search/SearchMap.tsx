@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { IStyled, PropertyType } from "../../types";
 import { useQuery } from "../../utility/useQuery";
@@ -18,6 +18,7 @@ import Listing from "./Listing";
 const Body = ({ className }: IStyled) => {
   const mapDivRef = React.createRef<HTMLDivElement>();
   const query = useQuery();
+  const theme = useTheme();
   const propertyType = query.get("type") as PropertyType["type"];
   const coords = {
     lat: Number(query.get("lat")),
@@ -72,7 +73,12 @@ const Body = ({ className }: IStyled) => {
           icon: "squareRound",
         });
 
-        marker.addListener("mouseover", () => {
+        const e =
+          window.screen.width < theme.breakpoint.value.sm
+            ? "click"
+            : "mouseover";
+
+        marker.addListener(e, () => {
           const content = `
           <a href="${linkTo(
             item.id,
