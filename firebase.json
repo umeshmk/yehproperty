@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "docs",
+    "site": "yehproperty",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
