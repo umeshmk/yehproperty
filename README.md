@@ -4,7 +4,7 @@
 
 ## About
 
-[Yehproperty.com](https://umeshmk.github.io/yehproperty/) is an online real-estate property search
+[https://yehproperty.web.app/](https://yehproperty.web.app/) is an online real-estate property search
 platform. We provide services wherein Developers/Agents/Individuals can
 post property ads to Sell or Rent both new and old properties. We help
 customers find a property with our Map-based Property search and
@@ -12,8 +12,8 @@ filters.
 
 ## Frontend project based on
 
-- React - `v17+`
-- Typescript - `v4.1`
+- React - `v17`
+- Typescript
 - Redux - `@reduxjs/toolkit`
 - React router
 - Styled components
@@ -21,14 +21,14 @@ filters.
 - Json files - `api`
 - Cloudinary - `cdn`
 - Algolia Places -`address search autocomplete`
-- Sanitize.css
 
+<!--
 ## More Todo
 
 - Testing
-- Accessibility
+- Accessibility -->
 
-## Issues
+<!-- ## Issues
 
 #### Github pages
 
@@ -46,8 +46,8 @@ Any link inside `infowindow` can't use `<Link to="">` from React router.This for
 
 _It's not an issue but a limitation._
 
-Error `For development purposes only` is due to no billing account on Google cloud.
+Error `For development purposes only` is due to no billing account on Google cloud. -->
 
-## License
+<!-- ## License
 
-All rights reserved
+All rights reserved -->

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "docs",
+    "public": "build",
     "site": "yehproperty",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [

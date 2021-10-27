@@ -2,5 +2,5 @@
 
 export const baseApiUrl =
   process.env.NODE_ENV === "production"
-    ? "/" + process.env.REACT_APP_ROUTER_BASENAME + "/api/"
+    ? process.env.REACT_APP_HOSTING
     : "/api/";

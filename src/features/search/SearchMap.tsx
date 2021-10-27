@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import styled, { useTheme } from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { IStyled, PropertyType } from "../../types";
-import { useQuery } from "../../utility/useQuery";
-import {
-  getMapAsync,
-  selectMapProjects,
-  selectMapBuys,
-  selectMapRents,
-} from "../reducers/mapSlice";
-import { addMap } from "../maps/addMap";
-import { addMarker } from "../maps/addMarker";
 import { calculatePrice } from "../../utility/calculatePrice";
 import { slugify } from "../../utility/slugify";
+import { useQuery } from "../../utility/useQuery";
+import { addMap } from "../maps/addMap";
+import { addMarker } from "../maps/addMarker";
+import {
+  getMapAsync,
+  selectMapBuys,
+  selectMapProjects,
+  selectMapRents,
+} from "../reducers/mapSlice";
 import Listing from "./Listing";
 
 const Body = ({ className }: IStyled) => {
@@ -35,9 +35,10 @@ const Body = ({ className }: IStyled) => {
 
   // Router's <Link to={} > is a react component which can't be used in infowindow
   const linkTo = (id: number, title: string) => {
-    return `/${
-      process.env.REACT_APP_ROUTER_BASENAME
-    }/${propertyType}/${id}/${slugify(title)}`;
+    let base = process.env.REACT_APP_ROUTER_BASENAME;
+    let slug = `${propertyType}/${id}/${slugify(title)}`;
+
+    return base ? `/${base}/${slug}` : `/${slug}`;
   };
 
   // get mapList
